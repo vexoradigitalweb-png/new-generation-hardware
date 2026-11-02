@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>New Generation Hardware</title>
+<meta name="description" content="New Generation Hardware Store on Dr. Martin Luther King Jr. Blvd in the Bronx. Tools, paint, plumbing, electrical and more. Shop in store, curbside pickup, or delivery. Open 7 days.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#12233F;
+  --navy-2:#1B3157;
+  --steel:#8A94A3;
+  --paper:#EEF0F2;
+  --white:#FFFFFF;
+  --yellow:#FFC62B;
+  --yellow-deep:#E8A800;
+  --brick:#B5452F;
+  --ink:#12233F;
+  --muted:#4B5870;
+  --line:rgba(18,35,63,.14);
+  --display:"Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+  --body:"Instrument Sans", system-ui, -apple-system, Segoe UI, sans-serif;
+  --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px;border-radius:4px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+
+/* progress bar */
+.progress{position:fixed;top:0;left:0;height:4px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--yellow);z-index:100}
+
+/* NAV */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .35s, box-shadow .35s}
+.nav.solid{background:rgba(18,35,63,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--white)}
+.logo-mark{width:44px;height:44px;flex:none}
+.logo-text{font-family:var(--display);font-weight:800;font-size:21px;line-height:.95;letter-spacing:.01em}
+.logo-text small{display:block;font-weight:600;font-size:14px;color:var(--yellow);letter-spacing:.04em}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:rgba(255,255,255,.82);text-decoration:none;font-weight:500;font-size:15px;white-space:nowrap}
+.nav-links a:hover{color:var(--white)}
+.nav-right{display:flex;align-items:center;gap:14px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--white);padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.08);white-space:nowrap}
+.dot{width:9px;height:9px;border-radius:50%;background:#9aa3b2;flex:none}
+.dot.open{background:#3DDC84;box-shadow:0 0 0 0 rgba(61,220,132,.6);animation:pulse 2s infinite}
+.dot.closed{background:#FF6B5B}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:700;font-size:16px;text-decoration:none;border:0;cursor:pointer;border-radius:10px;padding:15px 24px;transition:transform .2s, background .2s, box-shadow .2s;white-space:nowrap}
+.btn svg{width:18px;height:18px}
+.btn-yellow{background:var(--yellow);color:var(--navy);box-shadow:0 6px 0 var(--yellow-deep)}
+.btn-yellow:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--yellow-deep)}
+.btn-yellow:active{transform:translateY(4px);box-shadow:0 2px 0 var(--yellow-deep)}
+.btn-ghost{background:transparent;color:var(--white);box-shadow:inset 0 0 0 2px rgba(255,255,255,.35)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--white)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--navy-2)}
+.btn-sm{padding:10px 16px;font-size:15px;box-shadow:0 4px 0 var(--yellow-deep)}
+.menu-btn{display:none;background:none;border:0;color:var(--white);width:44px;height:44px;cursor:pointer}
+@media (max-width:1180px){.nav-links{display:none}}
+@media (max-width:960px){
+  .nav .status{display:none}
+}
+@media (max-width:520px){ .nav-call-text{display:none} .logo-text{font-size:18px} }
+
+/* HERO */
+.hero{position:relative;min-height:100vh;min-height:100svh;background:radial-gradient(1200px 700px at 78% 40%, #24406E 0%, var(--navy) 60%);color:var(--white);overflow:hidden;display:flex;align-items:center}
+#scene{position:absolute;inset:0;width:100%;height:100%}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 45%, #000 20%, transparent 75%);-webkit-mask-image:radial-gradient(ellipse at 70% 45%, #000 20%, transparent 75%);pointer-events:none}
+.hero-content{position:relative;z-index:2;padding-top:110px;padding-bottom:80px;width:100%;pointer-events:none}
+.hero-content > *{pointer-events:auto}
+.hero-place{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:rgba(255,255,255,.85);margin-bottom:22px}
+.hero-place svg{width:18px;height:18px;color:var(--yellow)}
+.hero h1{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(58px, 10.4vw, 156px);line-height:.84;letter-spacing:-.005em;max-width:9.5ch}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line span{display:inline-block}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.9)}
+.hero-sub{max-width:44ch;margin-top:26px;font-size:clamp(17px,1.5vw,20px);color:rgba(255,255,255,.82)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:52px;padding-top:26px;border-top:1px solid rgba(255,255,255,.14);max-width:640px}
+.fact strong{display:block;font-family:var(--display);font-weight:800;font-size:34px;line-height:1;color:var(--white)}
+.fact span{font-size:14px;color:rgba(255,255,255,.7)}
+.stars{display:inline-flex;gap:2px;vertical-align:middle;margin-left:6px}
+.stars svg{width:18px;height:18px}
+.scroll-cue{position:absolute;right:24px;bottom:28px;z-index:2;font-size:13px;color:rgba(255,255,255,.6);writing-mode:vertical-rl;letter-spacing:.06em;display:flex;align-items:center;gap:10px}
+.scroll-cue::after{content:"";width:1px;height:56px;background:linear-gradient(var(--yellow), transparent);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (max-width:760px){ .scroll-cue{display:none} .hero-facts{gap:18px 28px} .hero{background:radial-gradient(900px 600px at 70% 25%, #24406E 0%, var(--navy) 65%)} }
+
+/* TAPE (caution band) */
+.tape{background:var(--yellow);color:var(--navy);overflow:hidden;position:relative;border-top:3px solid var(--navy);border-bottom:3px solid var(--navy)}
+.tape-track{display:flex;width:max-content;animation:tape 38s linear infinite}
+.tape-item{display:flex;align-items:center;gap:34px;padding:16px 17px;font-family:var(--display);font-weight:800;font-size:30px;text-transform:uppercase;white-space:nowrap}
+.tape-item svg{width:22px;height:22px}
+@keyframes tape{to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{position:relative}
+.sec{padding:120px 0}
+@media (max-width:760px){.sec{padding:84px 0}}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.sec-head h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(46px,6.4vw,92px);line-height:.88;letter-spacing:-.003em}
+.sec-head p{color:var(--muted);max-width:46ch;font-size:18px}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr;gap:18px;margin-bottom:40px}}
+
+/* WAYS TO SHOP */
+.ways{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:20px}
+.way{position:relative;border-radius:18px;padding:34px 30px 30px;overflow:hidden;min-height:330px;display:flex;flex-direction:column}
+.way h3{font-family:var(--display);font-weight:800;font-size:40px;line-height:.95;text-transform:uppercase;margin:22px 0 12px}
+.way p{font-size:16px}
+.way .icon{width:62px;height:62px;border-radius:14px;display:grid;place-items:center}
+.way .icon svg{width:32px;height:32px}
+.way ul{list-style:none;margin-top:auto;padding-top:22px;display:grid;gap:8px;font-size:15px;font-weight:600}
+.way li{display:flex;gap:10px;align-items:flex-start}
+.way li svg{width:18px;height:18px;flex:none;margin-top:3px}
+.way-1{background:var(--navy);color:var(--white)}
+.way-1 .icon{background:var(--yellow);color:var(--navy)}
+.way-1 p{color:rgba(255,255,255,.78)}
+.way-1 li svg{color:var(--yellow)}
+.way-2{background:var(--yellow);color:var(--navy)}
+.way-2 .icon{background:var(--navy);color:var(--yellow)}
+.way-3{background:var(--white);color:var(--navy);box-shadow:inset 0 0 0 2px var(--line)}
+.way-3 .icon{background:var(--brick);color:var(--white)}
+.way-3 p,.way-2 p{color:var(--muted)}
+.way-2 p{color:#3a3a2a}
+.way-3 li svg{color:var(--brick)}
+.way-2 li svg{color:var(--navy)}
+.way-big{position:absolute;right:-14px;bottom:-30px;font-family:var(--display);font-weight:900;font-size:180px;line-height:1;opacity:.07;pointer-events:none;text-transform:uppercase}
+@media (max-width:960px){.ways{grid-template-columns:1fr}.way{min-height:0}}
+
+/* PEGBOARD departments */
+.peg-sec{background:#D9B98A;background:linear-gradient(180deg,#d3b07d,#c9a46f);color:var(--navy);overflow:hidden}
+.peg-sec::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle at center, rgba(60,38,10,.55) 3.2px, transparent 3.8px);background-size:34px 34px;opacity:.55;pointer-events:none}
+.peg-sec .sec-head p{color:#4a3a22}
+.peg-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:46px 22px;padding-top:20px}
+.tag{position:relative;background:var(--white);border-radius:14px;padding:44px 22px 24px;transform-origin:50% -14px;box-shadow:0 14px 26px -12px rgba(60,38,10,.5), 0 2px 0 rgba(60,38,10,.15);cursor:default;transition:box-shadow .3s}
+.tag::before{content:"";position:absolute;top:-22px;left:50%;width:6px;height:30px;margin-left:-3px;background:linear-gradient(90deg,#9aa3b2,#e3e7ec,#7d8694);border-radius:3px;box-shadow:0 2px 3px rgba(0,0,0,.25)}
+.tag::after{content:"";position:absolute;top:14px;left:50%;width:16px;height:16px;margin-left:-8px;border-radius:50%;background:#c9a46f;box-shadow:inset 0 2px 3px rgba(60,38,10,.5)}
+.tag:hover{box-shadow:0 22px 34px -12px rgba(60,38,10,.6), 0 2px 0 rgba(60,38,10,.15)}
+.tag .t-ico{width:52px;height:52px;color:var(--navy);margin-bottom:16px}
+.tag h3{font-family:var(--display);font-weight:800;font-size:28px;line-height:1;text-transform:uppercase}
+.tag p{font-size:15px;color:var(--muted);margin-top:8px;line-height:1.5}
+.tag.accent{background:var(--navy);color:var(--white)}
+.tag.accent .t-ico{color:var(--yellow)}
+.tag.accent p{color:rgba(255,255,255,.75)}
+.tag.yel{background:var(--yellow)}
+.tag.yel p{color:#4a3d10}
+@media (max-width:1020px){.peg-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.peg-grid{grid-template-columns:1fr 1fr;gap:40px 14px}.tag{padding:40px 14px 18px}.tag h3{font-size:22px}.tag p{font-size:14px}.tag .t-ico{width:40px;height:40px}}
+
+/* STATEMENT */
+.statement{background:var(--navy);color:var(--white);overflow:hidden}
+.statement-text{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:clamp(40px,5.6vw,84px);line-height:.98;max-width:18ch}
+.statement-text .w{color:rgba(255,255,255,.16);transition:color .25s}
+.statement-text .w.on{color:var(--white)}
+.statement-row{display:grid;grid-template-columns:1.6fr 1fr;gap:60px;align-items:end}
+.statement-side{color:rgba(255,255,255,.75);font-size:18px;max-width:38ch}
+.statement-side p + p{margin-top:16px}
+.bolt-spin{position:absolute;right:-60px;top:40px;width:340px;height:340px;opacity:.07;color:var(--white);pointer-events:none}
+@media (max-width:860px){.statement-row{grid-template-columns:1fr;gap:32px}}
+
+/* RATING */
+.rating{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.score{display:flex;align-items:flex-end;gap:24px}
+.score-num{font-family:var(--display);font-weight:900;font-size:clamp(150px,20vw,260px);line-height:.78;color:var(--navy)}
+.score-side{padding-bottom:10px}
+.big-stars{display:flex;gap:6px}
+.big-stars .s{position:relative;width:44px;height:44px}
+.big-stars .s svg{position:absolute;inset:0;width:100%;height:100%}
+.big-stars .s .fill{clip-path:inset(0 100% 0 0)}
+.score-side p{margin-top:12px;font-weight:600;color:var(--muted)}
+.rating-copy h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(42px,5vw,72px);line-height:.9}
+.rating-copy p{margin-top:18px;color:var(--muted);max-width:44ch;font-size:18px}
+
+@media (max-width:860px){.rating{grid-template-columns:1fr;gap:36px}.big-stars .s{width:34px;height:34px}}
+@media (max-width:560px){.score{flex-direction:column;align-items:flex-start;gap:16px}.score-side{padding-bottom:0}}
+
+/* VISIT */
+.visit{background:var(--white)}
+.visit-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:28px}
+.sign{background:var(--navy);color:var(--white);border-radius:20px;padding:34px;position:relative;overflow:hidden}
+.sign-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:26px}
+.sign h3{font-family:var(--display);font-weight:900;font-size:52px;line-height:.9;text-transform:uppercase}
+.live{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;background:rgba(255,255,255,.08);white-space:nowrap}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:16px;padding:13px 14px;border-radius:10px;font-size:17px;border-bottom:1px dashed rgba(255,255,255,.14)}
+.hours li:last-child{border-bottom:0}
+.hours li span:last-child{font-variant-numeric:tabular-nums;font-weight:600}
+.hours li.today{background:var(--yellow);color:var(--navy);border-bottom-color:transparent;font-weight:700}
+.hours li.today span:first-child::after{content:"Today";margin-left:10px;font-size:12px;font-weight:700;background:var(--navy);color:var(--yellow);padding:3px 8px;border-radius:999px;vertical-align:2px}
+.sign-note{margin-top:20px;font-size:15px;color:rgba(255,255,255,.7)}
+.loc{display:grid;grid-template-rows:auto 1fr;gap:20px}
+.loc-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.loc-card{border-radius:18px;padding:26px;background:var(--paper)}
+.loc-card .lbl{font-size:14px;font-weight:600;color:var(--muted)}
+.loc-card .val{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.05;margin:6px 0 16px;text-transform:uppercase}
+.loc-card a.val{display:block;text-decoration:none}
+.loc-card a.val:hover{color:var(--brick)}
+.map{border-radius:18px;overflow:hidden;min-height:360px;background:#dfe3e8;box-shadow:inset 0 0 0 2px var(--line)}
+.map iframe{width:100%;height:100%;min-height:360px;border:0;display:block;filter:saturate(.85)}
+@media (max-width:960px){.visit-grid{grid-template-columns:1fr}}
+@media (max-width:520px){.loc-cards{grid-template-columns:1fr}.sign{padding:26px 20px}.sign h3{font-size:42px}}
+
+/* FAQ */
+.faq-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:60px}
+.faq-wrap h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(46px,6vw,86px);line-height:.88;position:sticky;top:110px}
+.faq details{border-top:2px solid var(--navy)}
+.faq details:last-child{border-bottom:2px solid var(--navy)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 4px;font-weight:700;font-size:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .pm{width:34px;height:34px;flex:none;border-radius:50%;background:var(--navy);color:var(--yellow);display:grid;place-items:center;transition:transform .3s}
+.faq summary .pm svg{width:16px;height:16px}
+.faq details[open] summary .pm{transform:rotate(45deg);background:var(--yellow);color:var(--navy)}
+.faq .ans{padding:0 4px 26px;color:var(--muted);max-width:60ch}
+@media (max-width:860px){.faq-wrap{grid-template-columns:1fr;gap:28px}.faq-wrap h2{position:static}}
+
+/* CTA */
+.cta{background:var(--yellow);color:var(--navy);overflow:hidden}
+.cta-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:center}
+.cta h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(54px,8.4vw,132px);line-height:.84}
+.cta p{font-size:19px;margin-top:20px;max-width:40ch;font-weight:500}
+.cta-actions{display:grid;gap:14px;justify-items:start}
+.phone-big{font-family:var(--display);font-weight:900;font-size:clamp(40px,4.6vw,64px);line-height:1;text-decoration:none;display:inline-block;border-bottom:5px solid var(--navy)}
+.phone-big:hover{color:var(--brick);border-color:var(--brick)}
+.cta-stripes{position:absolute;inset:auto 0 0 0;height:22px;background:repeating-linear-gradient(-45deg,var(--navy) 0 22px,var(--yellow) 22px 44px)}
+@media (max-width:860px){.cta-inner{grid-template-columns:1fr}}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.75);padding:70px 0 34px;font-size:15px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+.foot h4{color:var(--white);font-size:15px;margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:8px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--yellow)}
+.foot-bottom{margin-top:56px;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:rgba(255,255,255,.5)}
+@media (max-width:860px){.foot{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot{grid-template-columns:1fr}}
+
+/* mobile sticky bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;gap:10px;transform:translateY(140%);transition:transform .4s}
+.mbar.show{transform:none}
+.mbar .btn{flex:1;padding:14px 10px}
+@media (max-width:760px){.mbar{display:flex}}
+
+/* reveal helper */
+.rv{opacity:0;transform:translateY(40px)}
+.no-motion .rv{opacity:1;transform:none}
+
+@media (prefers-reduced-motion: reduce){
+  .tape-track,.dot.open,.scroll-cue::after{animation:none}
+  html{scroll-behavior:auto}
+}
+:root{--m-bg:#E7EAEE;--m-block:#D6DBE2;--m-park:#CFE3C9;--m-street:#FFFFFF;--m-main:#FFC62B;--m-label:#12233F;--m-accent:#12233F;--m-card:#12233F;--m-card-ink:#FFFFFF;--m-btn-ink:#FFC62B}
+/* Illustrated map (works everywhere, no embed needed) */
+.mapart{position:relative;display:block;width:100%;height:100%;min-height:340px;text-decoration:none;color:inherit;overflow:hidden;border-radius:inherit}
+.mapsvg{position:absolute;inset:0;width:100%;height:100%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.mapart:hover .mapsvg{transform:scale(1.05)}
+.m-bg{fill:var(--m-bg)}
+.m-blocks rect{fill:var(--m-block)}
+.m-park{fill:var(--m-park)}
+.m-st path{stroke:var(--m-street);stroke-width:14;fill:none;stroke-linecap:round}
+.m-main{stroke:var(--m-main);stroke-width:26;fill:none}
+.m-lbl{font:700 12px var(--body);fill:var(--m-label);letter-spacing:.02em}
+.m-pin{fill:var(--m-accent)}
+.m-pin-dot{fill:var(--m-bg)}
+.m-pulse{fill:var(--m-accent);opacity:.35;transform-origin:center;transform-box:fill-box;animation:mpulse 2.2s ease-out infinite}
+@keyframes mpulse{0%{transform:scale(.4);opacity:.5}100%{transform:scale(2.6);opacity:0}}
+.mapcard{position:absolute;left:16px;right:16px;bottom:16px;display:grid;gap:4px;padding:16px 18px;border-radius:16px;background:var(--m-card);color:var(--m-card-ink);box-shadow:0 14px 30px -14px rgba(0,0,0,.45);max-width:360px}
+.mc-name{font-weight:800;font-size:16px}
+.mc-addr{font-size:14px;opacity:.8}
+.mc-btn{justify-self:start;margin-top:8px;font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px;background:var(--m-accent);color:var(--m-btn-ink)}
+@media (prefers-reduced-motion: reduce){.m-pulse{animation:none}}
+.mapcard .mc-btn{background:#FFC62B;color:#12233F}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="logo" href="#top" aria-label="New Generation Hardware, home">
+      <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <polygon points="24,2 43,13 43,35 24,46 5,35 5,13" fill="#FFC62B"/>
+        <circle cx="24" cy="24" r="8.5" fill="#12233F"/>
+      </svg>
+      <span class="logo-text">New Generation<small>Hardware Store</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#shop">Ways to shop</a></li>
+      <li><a href="#departments">Departments</a></li>
+      <li><a href="#visit">Hours &amp; location</a></li>
+      <li><a href="#faq">Questions</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="status" href="https://www.google.com/maps/dir/?api=1&amp;destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener" style="text-decoration:none;color:#fff" title="Get directions"><span style="color:#FFC62B;display:flex"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:15px;height:15px;flex:none"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>1800 Dr. MLK Jr. Blvd, Bronx</a>
+      <a class="btn btn-yellow btn-sm" href="tel:+17185837211">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="nav-call-text">(718) 583-7211</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="hero-grid"></div>
+  <div class="wrap hero-content">
+    <div class="hero-place" data-hero>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+      1800 Dr. Martin Luther King Jr. Blvd, Bronx
+    </div>
+    <h1 aria-label="Everything to fix, build and finish">
+      <span class="line"><span>Fix it.</span></span>
+      <span class="line"><span>Build it.</span></span>
+      <span class="line"><span class="outline">Finish it.</span></span>
+    </h1>
+    <p class="hero-sub" data-hero>Your neighborhood hardware store for tools, paint, plumbing and electrical parts. Walk in, pick up at the curb, or have it delivered.</p>
+    <div class="hero-ctas" data-hero>
+      <a class="btn btn-yellow" href="tel:+17185837211">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        Call the store
+      </a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener">Get directions</a>
+    </div>
+    <div class="hero-facts" data-hero>
+      <div class="fact"><strong>4.5<span class="stars" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="#FFC62B"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4L1.5 9.6 9 8.9z"/></svg></span></strong><span>Google rating</span></div>
+      <div class="fact"><strong data-count="192">192</strong><span>Customer reviews</span></div>
+      <div class="fact"><strong>7 days</strong><span>Open every week</span></div>
+      <div class="fact"><strong>3 ways</strong><span>In store, curbside, delivery</span></div>
+    </div>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<!-- TAPE -->
+<div class="tape" aria-hidden="true">
+  <div class="tape-track">
+    <div class="tape-item">Tools <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Paint <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Plumbing <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Electrical <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Fasteners <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Home repair <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Curbside pickup <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Delivery <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg></div>
+    <div class="tape-item">Tools <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Paint <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Plumbing <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Electrical <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Fasteners <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Home repair <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Curbside pickup <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg> Delivery <svg viewBox="0 0 24 24"><polygon points="12,2 21,7 21,17 12,22 3,17 3,7" fill="currentColor"/></svg></div>
+  </div>
+</div>
+
+<!-- WAYS TO SHOP -->
+<section class="sec" id="shop">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv">Shop the way your day works</h2>
+      <p class="rv">Grab what you need off the shelf, call ahead and pick it up without leaving the car, or have it brought to your door.</p>
+    </div>
+    <div class="ways">
+      <article class="way way-1 rv">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M5 13v8h14v-8"/><path d="M10 21v-5h4v5"/></svg></div>
+        <h3>In-store shopping</h3>
+        <p>Walk the aisles, compare parts side by side, and ask someone behind the counter what you actually need for the job.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Bring the broken part and match it on the spot</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Open 8:30 AM on weekdays and Saturday</li>
+        </ul>
+        <span class="way-big" aria-hidden="true">Walk in</span>
+      </article>
+      <article class="way way-2 rv">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14"/><path d="M3 17V12l2-5h14l2 5v5"/><circle cx="7.5" cy="17.5" r="2"/><circle cx="16.5" cy="17.5" r="2"/><path d="M3 12h18"/></svg></div>
+        <h3>Curbside pickup</h3>
+        <p>Call in your list, pull up out front, and we bring it out to you.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Order by phone</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>No parking hunt</li>
+        </ul>
+      </article>
+      <article class="way way-3 rv">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4h13v12H1z"/><path d="M14 8h4l4 4v4h-8"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg></div>
+        <h3>Delivery</h3>
+        <p>Too heavy, too much, or no time to come by? Have your order dropped off.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Call to arrange your drop-off</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Good for bulky orders</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DEPARTMENTS / PEGBOARD -->
+<section class="sec peg-sec" id="departments">
+  <div class="wrap" style="position:relative">
+    <div class="sec-head">
+      <h2 class="rv">Everything on the wall</h2>
+      <p class="rv">From a single washer to a full repaint, the parts for most home jobs are in one place. Not sure what you need? Bring a photo or the old part.</p>
+    </div>
+    <div class="peg-grid" id="pegs">
+      <article class="tag">
+        <svg class="t-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 40l16-16"/><path d="M22 14l6-6 12 12-6 6z"/><path d="M28 8l4-4 12 12-4 4"/></svg>
+        <h3>Hand &amp; power tools</h3>
+        <p>Hammers, drills, saws, wrenches, bits and blades.</p>
+      </article>
+      <article class="tag yel">
+        <svg class="t-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="6" width="26" height="12" rx="3"/><path d="M34 12h6v10H22v6"/><rect x="18" y="28" width="8" height="14" rx="2"/></svg>
+        <h3>Paint &amp; supplies</h3>
+        <p>Paint, primers, rollers, brushes, tape and drop cloths.</p>
+      </article>
+      <article class="tag">
+        <svg class="t-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 14h18v8h12a6 6 0 0 1 6 6v14"/><path d="M6 22h10"/><path d="M36 42h12"/><path d="M14 8v6"/></svg>
+        <h3>Plumbing</h3>
+        <p>Fittings, valves, pipe, washers and repair kits.</p>
+      </article>
+      <article class="tag accent">
+        <svg class="t-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M26 4L10 28h14l-2 16 16-24H24z"/></svg>
+        <h3>Electrical</h3>
+        <p>Outlets, switches, wire, bulbs and extension cords.</p>
+      </article>
+      <article class="tag accent">
+        <svg class="t-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="24,4 40,13 40,31 24,40 8,31 8,13"/><circle cx="24" cy="22" r="7"/></svg>
+        <h3>Fasteners</h3>
+        <p>Screws, nails, bolts, nuts, anchors and hooks.</p>
+      </article>
+      <article class="tag">
+        <svg class="t-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22L24 8l18 14"/><path d="M10 19v23h28V19"/><path d="M20 42V30h8v12"/></svg>
+        <h3>Home repair</h3>
+        <p>Caulk, adhesives, patching, weatherproofing and filters.</p>
+      </article>
+      <article class="tag yel">
+        <svg class="t-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="20" width="28" height="22" rx="3"/><path d="M16 20v-6a8 8 0 0 1 16 0v6"/><circle cx="24" cy="31" r="3"/></svg>
+        <h3>Locks &amp; security</h3>
+        <p>Locks, hinges, door hardware and chains.</p>
+      </article>
+      <article class="tag">
+        <svg class="t-ico" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6h20l-3 10H17z"/><path d="M17 16l-5 26h24l-5-26"/><path d="M20 26h8"/></svg>
+        <h3>Cleaning &amp; household</h3>
+        <p>Cleaners, trash bags, mops, buckets and everyday basics.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="sec statement">
+  <svg class="bolt-spin" id="boltSpin" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg>
+  <div class="wrap">
+    <div class="statement-row">
+      <p class="statement-text" id="statement">The Bronx keeps building. We keep the parts, the tools and the know-how a block away, so one broken piece never stops the whole job.</p>
+      <div class="statement-side">
+        <p>Landlords, supers, contractors and people fixing their own place all shop here. The questions are different. The answer should be the same: the right part, today.</p>
+        <p>Can't find it on the shelf? Ask at the counter before you leave.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RATING -->
+<section class="sec" id="reviews">
+  <div class="wrap rating">
+    <div class="score">
+      <div class="score-num" id="scoreNum">4.5</div>
+      <div class="score-side">
+        <div class="big-stars" id="bigStars" aria-label="4.5 out of 5 stars"></div>
+        <p>Based on 192 Google reviews</p>
+      </div>
+    </div>
+    <div class="rating-copy">
+      <h2 class="rv">Trusted by the neighborhood</h2>
+      <p class="rv">Nearly two hundred customers have rated New Generation on Google. Read what they say, and leave your own after your next visit.</p>
+      <div class="rv" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px">
+        <a class="btn btn-navy" href="https://search.google.com/local/reviews?placeid=ChIJFb6lChP0wokR5jQyVNrrumc" target="_blank" rel="noopener">Read reviews on Google</a>
+        <a class="btn btn-yellow" href="https://search.google.com/local/writereview?placeid=ChIJFb6lChP0wokR5jQyVNrrumc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4L1.5 9.6 9 8.9z"/></svg>
+          Leave a review</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="sec visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="rv">Come by, we're close</h2>
+      <p class="rv">On Dr. Martin Luther King Jr. Boulevard in the Bronx, open seven days a week.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="sign rv">
+        <div class="sign-top">
+          <h3>Store hours</h3>
+          <span class="live"><span class="dot" data-dot></span><span data-status-long>Checking</span></span>
+        </div>
+        <ul class="hours" id="hours">
+          <li data-day="1"><span>Monday</span><span>8:30 AM – 7:30 PM</span></li>
+          <li data-day="2"><span>Tuesday</span><span>8:30 AM – 7:30 PM</span></li>
+          <li data-day="3"><span>Wednesday</span><span>8:30 AM – 7:30 PM</span></li>
+          <li data-day="4"><span>Thursday</span><span>8:30 AM – 7:30 PM</span></li>
+          <li data-day="5"><span>Friday</span><span>8:30 AM – 7:30 PM</span></li>
+          <li data-day="6"><span>Saturday</span><span>8:30 AM – 7:30 PM</span></li>
+          <li data-day="0"><span>Sunday</span><span>10:00 AM – 4:30 PM</span></li>
+        </ul>
+        <p class="sign-note">Holiday hours may differ. Call ahead if you're coming on a holiday.</p>
+      </div>
+      <div class="loc">
+        <div class="loc-cards">
+          <div class="loc-card rv">
+            <div class="lbl">Address</div>
+            <div class="val">1800 Dr. MLK Jr. Blvd</div>
+            <div style="font-size:15px;color:var(--muted);margin:-8px 0 16px">Bronx, NY 10453</div>
+            <a class="btn btn-navy btn-sm" style="box-shadow:none" href="https://www.google.com/maps/dir/?api=1&destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener">Get directions</a>
+          </div>
+          <div class="loc-card rv">
+            <div class="lbl">Phone</div>
+            <a class="val" href="tel:+17185837211">(718) 583-7211</a>
+            <a class="btn btn-yellow btn-sm" href="tel:+17185837211">Call now</a>
+          </div>
+        </div>
+        <div class="map rv">
+          <a class="mapart" href="https://www.google.com/maps/search/?api=1&query=New+Generation+Hardware+Store&query_place_id=ChIJFb6lChP0wokR5jQyVNrrumc" target="_blank" rel="noopener" aria-label="Open New Generation Hardware Store in Google Maps">
+            <svg class="mapsvg" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="600" height="360" class="m-bg"/>
+              <g class="m-blocks">
+                <rect x="20" y="20" width="120" height="80" rx="6"/><rect x="160" y="20" width="90" height="60" rx="6"/><rect x="420" y="30" width="150" height="70" rx="6"/>
+                <rect x="30" y="250" width="110" height="90" rx="6"/><rect x="430" y="240" width="140" height="100" rx="6"/><rect x="330" y="280" width="70" height="60" rx="6"/>
+                <rect x="40" y="130" width="90" height="90" rx="6"/><rect x="470" y="130" width="100" height="80" rx="6"/>
+              </g>
+              <path class="m-park" d="M190 250 q40 -30 90 -10 q30 15 20 60 q-10 30 -70 30 q-50 -5 -40 -80z"/>
+              <g class="m-st"><path d="M0 115 H600"/><path d="M0 232 H600"/><path d="M150 0 V360"/><path d="M410 0 V360"/><path d="M0 40 L260 0"/></g>
+              <path class="m-main" d="M250 360 L330 0"/>
+              <text class="m-lbl" x="0" y="0" transform="translate(318 70) rotate(-77.5)">Dr. Martin Luther King Jr. Blvd</text>
+              <g transform="translate(303 122)">
+                <circle class="m-pulse" r="22"/>
+                <path class="m-pin" d="M0 0 C-14 -18 -20 -26 -20 -36 a20 20 0 1 1 40 0 c0 10 -6 18 -20 36z" transform="translate(0 -2)"/>
+                <circle class="m-pin-dot" cy="-38" r="7"/>
+              </g>
+            </svg>
+            <span class="mapcard">
+              <span class="mc-name">New Generation Hardware</span>
+              <span class="mc-addr">1800 Dr. Martin Luther King Jr. Blvd, Bronx, NY 10453</span>
+              <span class="mc-btn">Open in Google Maps</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap faq-wrap">
+    <h2 class="rv">Before you come in</h2>
+    <div class="faq">
+      <details>
+        <summary>What are your hours?<span class="pm"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+        <p class="ans">Monday through Saturday from 8:30 AM to 7:30 PM, and Sunday from 10:00 AM to 4:30 PM.</p>
+      </details>
+      <details>
+        <summary>Do you deliver?<span class="pm"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+        <p class="ans">Yes. Call the store at (718) 583-7211 to place your order and set up delivery.</p>
+      </details>
+      <details>
+        <summary>How does curbside pickup work?<span class="pm"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+        <p class="ans">Call in what you need, let us know when you're on the way, and pull up out front. We'll bring your order out to you.</p>
+      </details>
+      <details>
+        <summary>Can you help me find the right part?<span class="pm"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+        <p class="ans">That's what the counter is for. Bring the old part, a photo, or measurements and we'll help you match it.</p>
+      </details>
+      <details>
+        <summary>Where are you located?<span class="pm"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+        <p class="ans">1800 Dr. Martin Luther King Jr. Blvd, Bronx, NY 10453.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec cta">
+  <div class="wrap cta-inner">
+    <div>
+      <h2 id="ctaHead">Need it today?</h2>
+      <p id="ctaLine">Call ahead and we'll have it ready, or come straight in.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="phone-big" href="tel:+17185837211">(718) 583-7211</a>
+      <a class="btn btn-navy" href="https://www.google.com/maps/dir/?api=1&destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </div>
+  <div class="cta-stripes" aria-hidden="true"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#top" style="margin-bottom:16px">
+          <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,2 43,13 43,35 24,46 5,35 5,13" fill="#FFC62B"/><circle cx="24" cy="24" r="8.5" fill="#12233F"/></svg>
+          <span class="logo-text">New Generation<small>Hardware Store</small></span>
+        </a>
+        <p style="max-width:34ch;margin-top:14px">Tools, paint, plumbing, electrical and everyday hardware in the Bronx.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>1800 Dr. Martin Luther King Jr. Blvd</li>
+          <li>Bronx, NY 10453</li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener">Directions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul>
+          <li>Mon–Sat: 8:30 AM – 7:30 PM</li>
+          <li>Sun: 10:00 AM – 4:30 PM</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+17185837211">(718) 583-7211</a></li>
+          <li><a href="#shop">In store, curbside, delivery</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> New Generation Hardware Store</span>
+      <span>Website concept preview</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a class="btn btn-yellow" href="tel:+17185837211">Call</a>
+  <a class="btn btn-navy" href="https://www.google.com/maps/dir/?api=1&destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var hasGsap = typeof window.gsap !== "undefined";
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  /* ---------- Live open / closed status (store time: New York) ---------- */
+  var HOURS = {0:[600,990],1:[510,1170],2:[510,1170],3:[510,1170],4:[510,1170],5:[510,1170],6:[510,1170]};
+  var DAYNAMES = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  function fmt(m){var h=Math.floor(m/60),mm=m%60,ap=h>=12?"PM":"AM";h=h%12||12;return h+(mm?":"+(mm<10?"0":"")+mm:"")+" "+ap;}
+  function nyNow(){
+    try{
+      var parts = new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(new Date());
+      var o={}; parts.forEach(function(p){o[p.type]=p.value;});
+      var day=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday);
+      return {day:day, min:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)};
+    }catch(e){var d=new Date();return {day:d.getDay(),min:d.getHours()*60+d.getMinutes()};}
+  }
+  function updateStatus(){
+    var n=nyNow(), h=HOURS[n.day], open = n.min>=h[0] && n.min<h[1];
+    var shortTxt, longTxt, ctaHead, ctaLine;
+    if(open){
+      shortTxt="Open until "+fmt(h[1]);
+      longTxt="Open now";
+      ctaHead="Need it today?";
+      ctaLine="We're open until "+fmt(h[1])+" today. Call ahead and we'll have it ready, or come straight in.";
+    }else{
+      // The store opens every day, so the next opening is always later today or tomorrow
+      var before = n.min<h[0];
+      var nd = before ? "today" : "tomorrow";
+      var nm = before ? h[0] : HOURS[(n.day+1)%7][0];
+      shortTxt="Opens "+fmt(nm)+(before?"":" tomorrow");
+      longTxt="Closed now";
+      ctaHead = before ? "Need it today?" : "Need it tomorrow?";
+      ctaLine="We open at "+fmt(nm)+" "+nd+". Call ahead and we'll have your order ready.";
+    }
+    document.querySelectorAll("[data-dot]").forEach(function(d){d.className="dot "+(open?"open":"closed");});
+    document.querySelectorAll("[data-status-short]").forEach(function(e){e.textContent=shortTxt;});
+    document.querySelectorAll("[data-status-long]").forEach(function(e){e.textContent=longTxt;});
+    document.getElementById("ctaHead").textContent=ctaHead;
+    document.getElementById("ctaLine").textContent=ctaLine;
+    document.querySelectorAll("#hours li").forEach(function(li){li.classList.toggle("today", +li.dataset.day===n.day);});
+  }
+  updateStatus(); setInterval(updateStatus,60000);
+
+  /* ---------- Stars ---------- */
+  var starPath='<path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4L1.5 9.6 9 8.9z"/>';
+  var bs=document.getElementById("bigStars");
+  for(var i=0;i<5;i++){
+    var fillAmt = Math.max(0,Math.min(1,4.5-i));
+    var s=document.createElement("div"); s.className="s";
+    s.innerHTML='<svg viewBox="0 0 24 24" fill="#d6dbe2">'+starPath+'</svg><svg class="fill" viewBox="0 0 24 24" fill="#FFC62B" data-fill="'+fillAmt+'">'+starPath+'</svg>';
+    bs.appendChild(s);
+  }
+
+  /* ---------- Nav + progress + mobile bar ---------- */
+  var nav=document.getElementById("nav"), prog=document.getElementById("progress"), mbar=document.getElementById("mbar");
+  function onScroll(){
+    var y=window.scrollY, max=document.documentElement.scrollHeight-innerHeight;
+    nav.classList.toggle("solid", y>40);
+    prog.style.transform="scaleX("+(max>0?y/max:0)+")";
+    mbar.classList.toggle("show", y>innerHeight*0.7);
+  }
+  addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+  /* ---------- Statement words ---------- */
+  var st=document.getElementById("statement");
+  st.innerHTML = st.textContent.trim().split(/\s+/).map(function(w){return '<span class="w">'+w+'</span>';}).join(" ");
+  var words = st.querySelectorAll(".w");
+
+  /* ---------- GSAP choreography ---------- */
+  if(!hasGsap || reduce){
+    document.documentElement.classList.add("no-motion");
+    words.forEach(function(w){w.classList.add("on");});
+    document.querySelectorAll("#bigStars .fill").forEach(function(f){f.style.clipPath="inset(0 "+(100-f.dataset.fill*100)+"% 0 0)";});
+  } else {
+    gsap.registerPlugin(ScrollTrigger);
+    // Hero load sequence: the one orchestrated moment
+    var tl=gsap.timeline({defaults:{ease:"power4.out"}});
+    tl.from(".hero h1 .line span",{yPercent:110,duration:1.1,stagger:.12,delay:.15})
+      .from("[data-hero]",{y:24,opacity:0,duration:.8,stagger:.1},"-=.7")
+      .from(".nav",{y:-80,duration:.8},"-=1.1");
+
+    // Light section reveals
+    gsap.utils.toArray(".rv").forEach(function(el){
+      gsap.to(el,{opacity:1,y:0,duration:.9,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 88%"}});
+    });
+
+    // Pegboard tags drop in and swing
+    gsap.utils.toArray("#pegs .tag").forEach(function(tag,i){
+      gsap.from(tag,{rotation:(i%2?14:-14),y:-60,opacity:0,duration:1.6,ease:"elastic.out(1,0.35)",delay:(i%4)*.08,
+        scrollTrigger:{trigger:tag,start:"top 92%"}});
+      tag.addEventListener("mouseenter",function(){gsap.fromTo(tag,{rotation:0},{keyframes:{rotation:[5,-4,2.5,-1.2,0]},duration:1.1,ease:"power1.out",overwrite:true});});
+    });
+
+    // Statement word highlighter (scrubbed)
+    ScrollTrigger.create({trigger:st,start:"top 80%",end:"bottom 45%",scrub:true,onUpdate:function(self){
+      var n=Math.round(self.progress*words.length);
+      words.forEach(function(w,i){w.classList.toggle("on",i<n);});
+    }});
+    gsap.to("#boltSpin",{rotation:180,ease:"none",scrollTrigger:{trigger:".statement",start:"top bottom",end:"bottom top",scrub:true}});
+
+    // Rating: count up + star fill
+    var scoreEl=document.getElementById("scoreNum"), obj={v:0};
+    ScrollTrigger.create({trigger:"#reviews",start:"top 75%",once:true,onEnter:function(){
+      gsap.to(obj,{v:4.5,duration:1.6,ease:"power2.out",onUpdate:function(){scoreEl.textContent=obj.v.toFixed(1);}});
+      document.querySelectorAll("#bigStars .fill").forEach(function(f,i){
+        gsap.fromTo(f,{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 "+(100-f.dataset.fill*100)+"% 0 0)",duration:.5,delay:.25+i*.18,ease:"power2.out"});
+      });
+    }});
+    scoreEl.textContent="0.0";
+  }
+
+  /* ---------- Three.js hero: floating hardware ---------- */
+  var canvas=document.getElementById("scene");
+  if(typeof THREE==="undefined"){canvas.style.display="none";return;}
+  var renderer;
+  try{ renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true}); }
+  catch(e){ canvas.style.display="none"; return; }
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  var scene=new THREE.Scene();
+  var camera=new THREE.PerspectiveCamera(38,1,0.1,100);
+  camera.position.set(0,0,14);
+
+  scene.add(new THREE.HemisphereLight(0xdfe8ff,0x1b2a45,0.9));
+  var key=new THREE.DirectionalLight(0xffffff,1.25); key.position.set(5,8,9); scene.add(key);
+  var warm=new THREE.PointLight(0xFFC62B,2.2,30); warm.position.set(-4,-3,6); scene.add(warm);
+  var rim=new THREE.DirectionalLight(0x7fa6ff,0.9); rim.position.set(-6,4,-6); scene.add(rim);
+
+  var steel=new THREE.MeshStandardMaterial({color:0xc4ccd6,metalness:.75,roughness:.28});
+  var darkSteel=new THREE.MeshStandardMaterial({color:0x6f7b8c,metalness:.8,roughness:.35});
+  var yellow=new THREE.MeshStandardMaterial({color:0xFFC62B,metalness:.25,roughness:.38});
+  var brick=new THREE.MeshStandardMaterial({color:0xB5452F,metalness:.2,roughness:.5});
+  var navyMat=new THREE.MeshStandardMaterial({color:0x2a4a80,metalness:.4,roughness:.45});
+
+  function extrude(shape,depth,bevel){
+    var g=new THREE.ExtrudeGeometry(shape,{depth:depth,bevelEnabled:true,bevelThickness:bevel||.06,bevelSize:bevel||.06,bevelSegments:3,curveSegments:32});
+    g.center(); return g;
+  }
+  function hexNut(r){
+    var s=new THREE.Shape();
+    for(var i=0;i<6;i++){var a=i/6*Math.PI*2+Math.PI/6;var x=Math.cos(a)*r,y=Math.sin(a)*r;i?s.lineTo(x,y):s.moveTo(x,y);}
+    s.closePath();
+    var h=new THREE.Path(); h.absarc(0,0,r*.48,0,Math.PI*2,true); s.holes.push(h);
+    return extrude(s,r*.55,r*.06);
+  }
+  function gear(teeth,rOut,rIn,hole){
+    var s=new THREE.Shape(), step=Math.PI*2/teeth;
+    for(var i=0;i<teeth;i++){
+      var a=i*step;
+      var pts=[[rIn,a],[rOut,a+step*.18],[rOut,a+step*.48],[rIn,a+step*.66]];
+      pts.forEach(function(p,j){var x=Math.cos(p[1])*p[0],y=Math.sin(p[1])*p[0];(i===0&&j===0)?s.moveTo(x,y):s.lineTo(x,y);});
+    }
+    s.closePath();
+    var h=new THREE.Path(); h.absarc(0,0,hole,0,Math.PI*2,true); s.holes.push(h);
+    for(var k=0;k<5;k++){var ang=k/5*Math.PI*2, cx=Math.cos(ang)*(rIn*.62+hole*.38)*.92, cy=Math.sin(ang)*(rIn*.62+hole*.38)*.92;var w=new THREE.Path();w.absarc(cx,cy,(rIn-hole)*.2,0,Math.PI*2,true);s.holes.push(w);}
+    return extrude(s,.36,.04);
+  }
+  function bolt(){
+    var g=new THREE.Group();
+    var headShape=new THREE.Shape();
+    for(var i=0;i<6;i++){var a=i/6*Math.PI*2;var x=Math.cos(a)*.62,y=Math.sin(a)*.62;i?headShape.lineTo(x,y):headShape.moveTo(x,y);}
+    headShape.closePath();
+    var head=new THREE.Mesh(extrude(headShape,.38,.05),steel); head.rotation.x=Math.PI/2; head.position.y=1.25; g.add(head);
+    var shaft=new THREE.Mesh(new THREE.CylinderGeometry(.27,.27,2.3,32),steel); g.add(shaft);
+    for(var t=0;t<11;t++){var ring=new THREE.Mesh(new THREE.TorusGeometry(.28,.045,8,32),darkSteel);ring.rotation.x=Math.PI/2+.12;ring.position.y=-1.05+t*.17;g.add(ring);}
+    return g;
+  }
+  function screw(){
+    var g=new THREE.Group();
+    var head=new THREE.Mesh(new THREE.CylinderGeometry(.42,.42,.16,32),yellow); head.position.y=1; g.add(head);
+    var slot=new THREE.Mesh(new THREE.BoxGeometry(.6,.08,.1),darkSteel); slot.position.y=1.09; g.add(slot);
+    var slot2=slot.clone(); slot2.rotation.y=Math.PI/2; g.add(slot2);
+    var body=new THREE.Mesh(new THREE.CylinderGeometry(.16,.02,1.9,24),yellow); body.position.y=0; g.add(body);
+    for(var t=0;t<9;t++){var r=.17-t*.015;var ring=new THREE.Mesh(new THREE.TorusGeometry(r,.035,6,24),yellow);ring.rotation.x=Math.PI/2+.15;ring.position.y=.8-t*.19;g.add(ring);}
+    return g;
+  }
+  function wrench(){
+    var g=new THREE.Group();
+    var s=new THREE.Shape();
+    s.absarc(0,0,.62,.62,Math.PI*2-.62,false);
+    s.absarc(0,0,.3,Math.PI*2-.62,.62,true);
+    s.closePath();
+    var head=new THREE.Mesh(extrude(s,.22,.03),steel); head.position.x=1.55; g.add(head);
+    var hs=new THREE.Shape(); hs.moveTo(-1.6,-.17); hs.lineTo(1.1,-.2); hs.lineTo(1.1,.2); hs.lineTo(-1.6,.17); hs.absarc(-1.6,0,.17,Math.PI/2,Math.PI*1.5,false);
+    var handle=new THREE.Mesh(extrude(hs,.18,.03),steel); handle.position.x=0; g.add(handle);
+    var ring=new THREE.Shape(); ring.absarc(0,0,.48,0,Math.PI*2,false); var rh=new THREE.Path(); rh.absarc(0,0,.26,0,Math.PI*2,true); ring.holes.push(rh);
+    var box=new THREE.Mesh(extrude(ring,.22,.03),steel); box.position.x=-1.95; g.add(box);
+    return g;
+  }
+  function paintCan(){
+    var g=new THREE.Group();
+    var body=new THREE.Mesh(new THREE.CylinderGeometry(.8,.8,1.2,48),brick); g.add(body);
+    var label=new THREE.Mesh(new THREE.CylinderGeometry(.805,.805,.55,48,1,true),yellow); g.add(label);
+    var lid=new THREE.Mesh(new THREE.CylinderGeometry(.82,.82,.08,48),steel); lid.position.y=.64; g.add(lid);
+    var rimB=new THREE.Mesh(new THREE.TorusGeometry(.8,.04,8,48),steel); rimB.rotation.x=Math.PI/2; rimB.position.y=-.6; g.add(rimB);
+    var handle=new THREE.Mesh(new THREE.TorusGeometry(.82,.025,6,48,Math.PI),darkSteel); handle.position.y=.62; g.add(handle);
+    return g;
+  }
+
+  var items=[];
+  function add(obj,x,y,z,scale,spin){
+    obj.position.set(x,y,z); obj.scale.setScalar(scale);
+    obj.rotation.set(Math.random()*Math.PI,Math.random()*Math.PI,Math.random()*Math.PI);
+    obj.userData={base:new THREE.Vector3(x,y,z),spin:spin,phase:Math.random()*Math.PI*2,drift:new THREE.Vector3((Math.random()-.5)*2,(Math.random()*.5+.6),(Math.random()-.5)*2)};
+    scene.add(obj); items.push(obj); return obj;
+  }
+  var group=[];
+  function mesh(g,m){return new THREE.Mesh(g,m);}
+  var bigGear=add(mesh(gear(16,1.85,1.55,.5),yellow),3.6,.2,0,1,[.0,.0,.25]);
+  bigGear.rotation.set(.35,-.5,0);
+  var smallGear=add(mesh(gear(10,1.05,.86,.3),navyMat),5.7,1.9,-.6,1,[0,0,-.42]);
+  smallGear.rotation.set(.35,-.5,0);
+  add(mesh(hexNut(.8),steel),1.3,2.6,1.2,1,[.4,.6,.2]);
+  add(mesh(hexNut(.55),yellow),6.6,-1.9,1.2,1,[.5,.3,.4]);
+  add(mesh(hexNut(.45),steel),-.6,-3.2,-1.5,1,[.3,.5,.2]);
+  add(bolt(),2.3,-2.4,1.6,.9,[.3,.4,.5]);
+  add(screw(),7.4,1.1,.8,.9,[.6,.2,.4]);
+  add(wrench(),4.8,3.6,-1.2,.85,[.2,.35,.25]);
+  add(paintCan(),.9,-1,-2.6,.9,[.25,.45,.15]);
+  add(mesh(hexNut(.35),brick),-2.6,3.4,-3,1,[.5,.5,.5]);
+  add(screw(),-3.4,-2.6,-2.4,.7,[.4,.3,.6]);
+
+  // dust particles
+  var pg=new THREE.BufferGeometry(), N=180, pos=new Float32Array(N*3);
+  for(var p=0;p<N;p++){pos[p*3]=(Math.random()-.5)*26;pos[p*3+1]=(Math.random()-.5)*16;pos[p*3+2]=(Math.random()-.5)*10-2;}
+  pg.setAttribute("position",new THREE.BufferAttribute(pos,3));
+  var dust=new THREE.Points(pg,new THREE.PointsMaterial({color:0xFFC62B,size:.05,transparent:true,opacity:.55}));
+  scene.add(dust);
+
+  var root=new THREE.Group(); scene.add(root);
+  items.forEach(function(o){root.add(o);});
+
+  var mouse={x:0,y:0}, sm={x:0,y:0}, scrollP=0, enter={v:0};
+  addEventListener("pointermove",function(e){mouse.x=e.clientX/innerWidth*2-1;mouse.y=-(e.clientY/innerHeight*2-1);},{passive:true});
+  addEventListener("scroll",function(){scrollP=Math.min(1,scrollY/innerHeight);},{passive:true});
+
+  var isMobile=false;
+  function resize(){
+    var w=canvas.clientWidth,h=canvas.clientHeight;
+    renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();
+    isMobile = w<760;
+    // shift the cluster so it sits to the right on desktop, behind/above text on mobile
+    root.position.set(isMobile?-3.2:0, isMobile?2.6:0, isMobile?-3:0);
+    root.scale.setScalar(isMobile?.78:1);
+  }
+  addEventListener("resize",resize); resize();
+
+  if(hasGsap && !reduce){ gsap.to(enter,{v:1,duration:2.2,ease:"expo.out",delay:.2}); } else { enter.v=1; }
+
+  var clock=new THREE.Clock(), visible=true;
+  new IntersectionObserver(function(en){visible=en[0].isIntersecting;}).observe(canvas);
+  function frame(){
+    requestAnimationFrame(frame);
+    if(!visible) return;
+    var t=clock.getElapsedTime();
+    sm.x+=(mouse.x-sm.x)*.05; sm.y+=(mouse.y-sm.y)*.05;
+    items.forEach(function(o){
+      var u=o.userData, sp=reduce?0:1;
+      var scatter=scrollP*scrollP*6;
+      o.position.x=u.base.x + u.drift.x*scatter;
+      o.position.y=u.base.y + Math.sin(t*.8+u.phase)*.25*sp + u.drift.y*scatter*1.2 - (1-enter.v)*8;
+      o.position.z=u.base.z + u.drift.z*scatter;
+      if(o===bigGear||o===smallGear){ o.rotation.z += u.spin[2]*.016*sp; }
+      else { o.rotation.x+=u.spin[0]*.01*sp; o.rotation.y+=u.spin[1]*.01*sp; o.rotation.z+=u.spin[2]*.006*sp; }
+    });
+    root.rotation.y = sm.x*.25 + scrollP*.6;
+    root.rotation.x = -sm.y*.15 + scrollP*.3;
+    dust.rotation.y = t*.02; dust.position.y = -scrollP*2;
+    camera.position.x = sm.x*.6; camera.position.y = sm.y*.4;
+    camera.lookAt(isMobile?-1:1.5,0,0);
+    renderer.render(scene,camera);
+  }
+  frame();
+})();
+</script>
+
+<!-- Call dialog: phones dial directly; computers (which can't place calls) get the number to copy -->
+<div class="calldlg" id="callDlg" role="dialog" aria-modal="true" aria-labelledby="callTitle" hidden>
+  <div class="calldlg-box">
+    <button class="calldlg-x" type="button" aria-label="Close" data-close>&times;</button>
+    <p class="calldlg-k" id="callTitle">Call New Generation Hardware</p>
+    <a class="calldlg-num" href="tel:+17185837211" data-direct>(718) 583-7211</a>
+    <p class="calldlg-hint">On a computer? Copy the number, or scan the code with your phone's camera to call.</p>
+    <img class="calldlg-qr" alt="QR code that dials (718) 583-7211" width="150" height="150" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=8&data=tel%3A%2B17185837211" onerror="this.remove()">
+    <div class="calldlg-actions">
+      <button type="button" class="calldlg-btn primary" id="copyNum">Copy number</button>
+      <a class="calldlg-btn" href="tel:+17185837211" data-direct>Call from this device</a>
+    </div>
+    <p class="calldlg-toast" id="copyToast" aria-live="polite"></p>
+  </div>
+</div>
+<style>
+:root{--cd-bg:#12233F;--cd-ink:#FFFFFF;--cd-accent:#FFC62B;--cd-accent-ink:#12233F}
+.calldlg{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.calldlg[hidden]{display:none}
+.calldlg-box{position:relative;width:min(400px,100%);background:var(--cd-bg);color:var(--cd-ink);border-radius:22px;padding:30px 26px 24px;text-align:center;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);animation:cdIn .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes cdIn{from{transform:translateY(20px) scale(.96);opacity:0}}
+.calldlg-x{position:absolute;top:10px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:rgba(127,127,127,.15);color:inherit;font-size:22px;line-height:1;cursor:pointer}
+.calldlg-k{font-weight:700;font-size:15px;opacity:.75}
+.calldlg-num{display:block;margin:6px 0 10px;font-family:var(--display);font-weight:800;font-size:38px;line-height:1.1;text-decoration:none;color:var(--cd-accent)}
+.calldlg-hint{font-size:14px;opacity:.75;max-width:30ch;margin:0 auto 14px}
+.calldlg-qr{margin:0 auto 16px;border-radius:12px;background:#fff;padding:6px}
+.calldlg-actions{display:grid;gap:10px}
+.calldlg-btn{display:block;width:100%;padding:14px;border-radius:12px;border:0;font:800 15px var(--body);cursor:pointer;text-decoration:none;background:rgba(127,127,127,.15);color:inherit}
+.calldlg-btn.primary{background:var(--cd-accent);color:var(--cd-accent-ink)}
+.calldlg-toast{min-height:20px;margin-top:10px;font-size:14px;font-weight:700}
+@media (prefers-reduced-motion: reduce){.calldlg-box{animation:none}}
+</style>
+<script>
+(function(){
+  var dlg=document.getElementById("callDlg"),toast=document.getElementById("copyToast"),last=null;
+  var touch=window.matchMedia("(pointer: coarse)").matches;
+  var framed=false; try{framed=window.self!==window.top;}catch(e){framed=true;}
+  function open(){last=document.activeElement;dlg.hidden=false;toast.textContent="";setTimeout(function(){document.getElementById("copyNum").focus();},30);}
+  function close(){dlg.hidden=true;if(last&&last.focus)last.focus();}
+  document.addEventListener("click",function(e){
+    var a=e.target.closest('a[href^="tel:"]'); if(!a) return;
+    if(a.hasAttribute("data-direct")){ if(framed){e.preventDefault();window.open(a.href,"_blank");} return; }
+    if(touch && !framed) return;              // phone opened normally: let it dial
+    e.preventDefault();
+    if(touch && framed){ window.open(a.href,"_blank"); }
+    open();
+  });
+  dlg.addEventListener("click",function(e){if(e.target===dlg||e.target.closest("[data-close]"))close();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!dlg.hidden)close();});
+  document.getElementById("copyNum").addEventListener("click",function(){
+    var n="(718) 583-7211";
+    function ok(){toast.textContent="Number copied";}
+    function fallback(){var t=document.createElement("textarea");t.value=n;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();try{document.execCommand("copy");ok();}catch(err){toast.textContent=n;}t.remove();}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(n).then(ok,fallback);}else{fallback();}
+  });
+})();
+</script>
+</body>
+</html>

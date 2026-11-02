@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>New Generation Hardware</title>
+<meta name="description" content="New Generation Hardware Store, 1800 Dr. Martin Luther King Jr. Blvd, Bronx. Tools, paint, plumbing, electrical and more. Shop in store, curbside pickup, or delivery. Open 7 days.">
+<meta name="theme-color" content="#0D2620">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ever:#0D2620;
+  --ever-2:#133229;
+  --ever-3:#1C4237;
+  --copper:#E2793A;
+  --copper-2:#C9622A;
+  --brass:#F3BE86;
+  --chalk:#EFF2EE;
+  --sage:#A9C1B4;
+  --white:#FFFFFF;
+  --muted:#4E6A60;
+  --line:rgba(13,38,32,.12);
+  --glass:rgba(255,255,255,.06);
+  --glass-line:rgba(255,255,255,.12);
+  --display:"Unbounded", "Arial Black", system-ui, sans-serif;
+  --body:"Manrope", system-ui, -apple-system, Segoe UI, sans-serif;
+  --max:1280px;
+  --r:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--chalk);color:var(--ever);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit}
+:focus-visible{outline:3px solid var(--copper);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+@media (max-width:600px){.wrap{padding:0 16px}}
+::selection{background:var(--copper);color:var(--white)}
+
+/* Grain */
+.grain{position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+
+/* Preloader */
+.loader{position:fixed;inset:0;z-index:200;background:var(--ever);color:var(--chalk);display:grid;place-items:center}
+.loader-inner{display:grid;justify-items:center;gap:22px}
+.loader svg{width:74px;height:74px;color:var(--copper);animation:spin 1.4s cubic-bezier(.6,0,.4,1) infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loader-num{font-family:var(--display);font-weight:600;font-size:15px;color:var(--sage);font-variant-numeric:tabular-nums}
+.loader-bar{width:180px;height:2px;background:rgba(255,255,255,.12);overflow:hidden;border-radius:2px}
+.loader-bar i{display:block;height:100%;width:100%;background:var(--copper);transform:scaleX(0);transform-origin:left}
+
+/* Cursor */
+.cur,.cur-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:150;border-radius:50%;transform:translate(-50%,-50%)}
+.cur{width:7px;height:7px;background:var(--copper)}
+.cur-ring{width:38px;height:38px;border:1.5px solid rgba(226,121,58,.7);transition:width .25s,height .25s,background .25s,border-color .25s}
+.cur-ring.big{width:74px;height:74px;background:rgba(226,121,58,.14);border-color:transparent}
+@media (pointer:coarse){.cur,.cur-ring{display:none}}
+
+/* Progress */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--copper),var(--brass));z-index:120}
+
+/* NAV — floating pill */
+.nav{position:fixed;top:16px;left:0;right:0;z-index:100;pointer-events:none}
+.nav-pill{pointer-events:auto;margin:0 auto;max-width:1180px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:10px 10px 10px 18px;border-radius:999px;background:rgba(13,38,32,.55);backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%);box-shadow:inset 0 0 0 1px var(--glass-line),0 18px 40px -20px rgba(0,0,0,.5);color:var(--chalk);transition:background .4s}
+.nav.solid .nav-pill{background:rgba(13,38,32,.86)}
+@media (max-width:1240px){.nav-pill{margin:0 16px}}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;color:inherit}
+.logo-mark{width:36px;height:36px;flex:none}
+.logo-text{font-family:var(--display);font-weight:700;font-size:14px;line-height:1.05;letter-spacing:-.01em}
+.logo-text small{display:block;font-family:var(--body);font-weight:600;font-size:12px;color:var(--brass);letter-spacing:0}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{display:block;padding:9px 15px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;color:rgba(239,242,238,.8);transition:background .25s,color .25s}
+.nav-links a:hover{background:rgba(255,255,255,.08);color:var(--white)}
+.nav-right{display:flex;align-items:center;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;padding:8px 13px;border-radius:999px;background:rgba(255,255,255,.07);white-space:nowrap}
+.dot{width:8px;height:8px;border-radius:50%;background:#9aa3b2;flex:none}
+.dot.open{background:#5BE49B;box-shadow:0 0 0 0 rgba(91,228,155,.6);animation:pulse 2s infinite}
+.dot.closed{background:#FF7A66}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(91,228,155,0)}100%{box-shadow:0 0 0 0 rgba(91,228,155,0)}}
+@media (max-width:1020px){.nav-links{display:none}}
+@media (max-width:640px){.nav .chip{display:none}.logo-text{font-size:12px}.nav-pill{padding-left:12px}}
+
+/* Buttons */
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:800;font-size:15px;text-decoration:none;border:0;cursor:pointer;border-radius:999px;padding:16px 26px;white-space:nowrap;overflow:hidden;isolation:isolate;transition:color .35s}
+.btn svg{width:17px;height:17px}
+.btn::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;transform:translateY(101%);transition:transform .45s cubic-bezier(.7,0,.2,1)}
+.btn:hover::before{transform:none}
+.btn-copper{background:var(--copper);color:var(--white)}
+.btn-copper::before{background:var(--brass)}
+.btn-copper:hover{color:var(--ever)}
+.btn-glass{background:rgba(255,255,255,.08);color:var(--chalk);box-shadow:inset 0 0 0 1px var(--glass-line);backdrop-filter:blur(8px)}
+.btn-glass::before{background:var(--chalk)}
+.btn-glass:hover{color:var(--ever)}
+.btn-dark{background:var(--ever);color:var(--chalk)}
+.btn-dark::before{background:var(--copper)}
+.btn-dark:hover{color:var(--white)}
+.btn-sm{padding:11px 18px;font-size:14px}
+@media (max-width:520px){.nav-call-text{display:none}}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;min-height:100svh;background:radial-gradient(1100px 760px at 76% 42%, #1F4A3D 0%, var(--ever) 62%);color:var(--chalk);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+#scene{position:absolute;inset:0;width:100%;height:100%}
+.hero-glow{position:absolute;width:640px;height:640px;right:6%;top:14%;border-radius:50%;background:radial-gradient(circle,rgba(226,121,58,.28),transparent 65%);filter:blur(30px);pointer-events:none}
+.hero-content{position:relative;z-index:2;padding-top:130px;padding-bottom:42px;width:100%;pointer-events:none}
+.hero-content a,.hero-content .chip{pointer-events:auto}
+.hero-chip{margin-bottom:26px}
+.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,7.4vw,112px);line-height:.98;letter-spacing:-.045em;max-width:11ch}
+.hero h1 .wd{display:inline-block;white-space:nowrap}
+.hero h1 .ch{display:inline-block;will-change:transform}
+.hero h1 .cp{color:var(--copper)}
+.hero-row{display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;margin-top:30px}
+.hero-sub{max-width:42ch;font-size:clamp(17px,1.4vw,19px);color:rgba(239,242,238,.78)}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero-stats{display:flex;gap:10px}
+.stat{min-width:132px;padding:18px 20px;border-radius:20px;background:var(--glass);box-shadow:inset 0 0 0 1px var(--glass-line);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.stat b{display:block;font-family:var(--display);font-weight:700;font-size:30px;line-height:1;letter-spacing:-.03em}
+.stat > span{font-size:13px;color:rgba(239,242,238,.65)}
+.stat .st{color:var(--brass)}
+@media (max-width:980px){.hero-row{grid-template-columns:1fr}.hero-stats{flex-wrap:wrap}}
+@media (max-width:560px){.stat{min-width:0;flex:1 1 40%;padding:14px 14px}.stat b{font-size:24px}}
+
+/* MARQUEE */
+.marq{background:var(--ever);color:var(--chalk);overflow:hidden;padding:30px 0 34px;border-top:1px solid rgba(255,255,255,.06)}
+.marq-track{display:flex;width:max-content;will-change:transform}
+.marq-item{display:flex;align-items:center;gap:40px;padding-right:40px;font-family:var(--display);font-weight:700;font-size:clamp(40px,6vw,86px);letter-spacing:-.04em;white-space:nowrap;line-height:1}
+.marq-item .o{color:transparent;-webkit-text-stroke:1.5px rgba(239,242,238,.55)}
+.marq-item svg{width:.55em;height:.55em;color:var(--copper);flex:none}
+
+/* SECTIONS */
+.sec{padding:130px 0;position:relative}
+@media (max-width:760px){.sec{padding:88px 0}}
+.h2{font-family:var(--display);font-weight:700;font-size:clamp(36px,4.8vw,70px);line-height:1;letter-spacing:-.045em}
+.lede{color:var(--muted);font-size:18px;max-width:46ch}
+.sec-head{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr;gap:18px;margin-bottom:38px}}
+
+/* BENTO */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(150px,auto);gap:16px}
+.cell{position:relative;border-radius:var(--r);padding:30px;overflow:hidden;isolation:isolate}
+.cell::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .4s;background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(226,121,58,.22), transparent 60%)}
+.cell:hover::before{opacity:1}
+.cell h3{font-family:var(--display);font-weight:700;font-size:28px;line-height:1.05;letter-spacing:-.035em}
+.cell p{margin-top:10px;font-size:16px}
+.ico{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;margin-bottom:22px}
+.ico svg{width:26px;height:26px}
+.c-store{grid-column:span 7;grid-row:span 2;background:var(--ever);color:var(--chalk);display:flex;flex-direction:column}
+.c-store .ico{background:var(--copper);color:var(--white)}
+.c-store p{color:rgba(239,242,238,.72);max-width:40ch}
+.c-store h3{font-size:clamp(32px,3.4vw,48px)}
+.c-store .tick{list-style:none;margin-top:auto;padding-top:30px;display:grid;gap:10px;font-weight:700;font-size:15px}
+.tick li{display:flex;gap:10px;align-items:center}
+.tick svg{width:18px;height:18px;color:var(--brass);flex:none}
+.c-store .ghost-nut{position:absolute;right:-60px;bottom:-60px;width:300px;height:300px;color:rgba(255,255,255,.05);z-index:-1}
+.c-curb{grid-column:span 5;background:var(--copper);color:var(--white)}
+.c-curb .ico{background:rgba(255,255,255,.18)}
+.c-curb p{color:rgba(255,255,255,.88)}
+.c-curb::before{background:radial-gradient(420px circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,.2), transparent 60%)}
+.c-del{grid-column:span 5;background:var(--white);box-shadow:inset 0 0 0 1px var(--line)}
+.c-del .ico{background:var(--ever);color:var(--brass)}
+.c-del p{color:var(--muted)}
+.c-call{grid-column:span 7;background:var(--brass);color:var(--ever);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.c-call .big{font-family:var(--display);font-weight:700;font-size:clamp(28px,3.4vw,46px);letter-spacing:-.04em;text-decoration:none;line-height:1}
+.c-call .big:hover{color:var(--copper-2)}
+.c-call p{margin-top:6px;color:#6b4a26;font-weight:600}
+.c-rate{grid-column:span 5;background:var(--ever-3);color:var(--chalk);display:flex;align-items:center;gap:22px}
+.c-rate .n{font-family:var(--display);font-weight:700;font-size:72px;line-height:.9;letter-spacing:-.05em}
+.c-rate .stars{display:flex;gap:3px}
+.c-rate .stars svg{width:20px;height:20px}
+.c-rate p{color:rgba(239,242,238,.72);margin-top:6px;font-size:15px}
+.c-rate a{color:var(--brass);font-weight:700;font-size:15px}
+@media (max-width:980px){.c-store,.c-curb,.c-del,.c-call,.c-rate{grid-column:span 12;grid-row:auto}}
+
+/* HORIZONTAL DEPARTMENTS */
+.depts{background:var(--ever);color:var(--chalk);overflow:hidden}
+.depts .lede{color:rgba(239,242,238,.7)}
+.h-outer{overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.h-outer::-webkit-scrollbar{display:none}
+.js-pin .h-outer{overflow:visible}
+.h-track{display:flex;gap:18px;padding:0 28px 6px;width:max-content}
+.panel{scroll-snap-align:start;flex:none;width:min(380px,78vw);height:460px;border-radius:28px;padding:30px;display:flex;flex-direction:column;position:relative;overflow:hidden;background:linear-gradient(160deg,var(--ever-3),var(--ever-2));box-shadow:inset 0 0 0 1px var(--glass-line);isolation:isolate;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.panel:hover{transform:translateY(-8px)}
+.panel::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .4s;background:radial-gradient(380px circle at var(--mx,50%) var(--my,50%), rgba(243,190,134,.18), transparent 60%)}
+.panel:hover::before{opacity:1}
+.panel .pi{width:82px;height:82px;color:var(--brass)}
+.panel h3{font-family:var(--display);font-weight:700;font-size:32px;line-height:1.02;letter-spacing:-.04em;margin-top:auto}
+.panel p{color:rgba(239,242,238,.7);margin-top:12px;font-size:16px}
+.panel .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.panel .tags span{font-size:13px;font-weight:700;padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.07);color:rgba(239,242,238,.85)}
+.panel.hot{background:linear-gradient(160deg,#E98A4E,var(--copper-2))}
+.panel.hot .pi{color:var(--white)}
+.panel.hot p{color:rgba(255,255,255,.9)}
+.panel.hot .tags span{background:rgba(255,255,255,.18);color:var(--white)}
+.panel.light{background:var(--chalk);color:var(--ever)}
+.panel.light .pi{color:var(--copper)}
+.panel.light p{color:var(--muted)}
+.panel.light .tags span{background:rgba(13,38,32,.07);color:var(--ever)}
+.panel.end{background:transparent;box-shadow:inset 0 0 0 1.5px dashed rgba(255,255,255,.2);justify-content:center}
+.panel.end{border:1.5px dashed rgba(239,242,238,.25);box-shadow:none}
+.panel.end h3{margin-top:0}
+.h-hint{display:flex;align-items:center;gap:14px;margin-top:30px;color:rgba(239,242,238,.55);font-size:14px;font-weight:600}
+.h-bar{flex:1;max-width:260px;height:2px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.h-bar i{display:block;height:100%;width:100%;background:var(--copper);transform:scaleX(0);transform-origin:left}
+
+/* STATEMENT */
+.statement{background:var(--chalk)}
+.statement-text{font-family:var(--display);font-weight:600;font-size:clamp(28px,3.6vw,54px);line-height:1.12;letter-spacing:-.035em;max-width:24ch}
+.statement-text .w{color:rgba(13,38,32,.14);transition:color .3s}
+.statement-text .w.on{color:var(--ever)}
+.statement-text .w.on.k{color:var(--copper)}
+.statement-row{display:grid;grid-template-columns:1.7fr 1fr;gap:60px;align-items:end}
+.statement-side{color:var(--muted);font-size:17px;max-width:36ch}
+.statement-side p+p{margin-top:14px}
+@media (max-width:900px){.statement-row{grid-template-columns:1fr;gap:30px}}
+
+/* VISIT */
+.visit{background:var(--white)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.clock-card{background:var(--ever);color:var(--chalk);border-radius:28px;padding:30px 24px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;grid-row:span 2}
+.dial{width:clamp(190px,17vw,240px);height:auto;aspect-ratio:1}
+.dial text{font-family:var(--body);font-weight:700;font-size:9px;fill:rgba(239,242,238,.55)}
+.dial .ctr-big{font-family:var(--display);font-weight:700;font-size:20px;fill:var(--chalk);letter-spacing:-.5px}
+.dial .ctr-sm{font-size:9.5px;fill:var(--brass);font-weight:700}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:12px;font-size:15px;color:rgba(239,242,238,.8)}
+.hours li span:last-child{font-variant-numeric:tabular-nums;font-weight:700;color:var(--chalk);white-space:nowrap}
+.hours li.today{background:var(--copper);color:var(--white)}
+.hours li.today span:last-child{color:var(--white)}
+.clock-note{font-size:13px;color:rgba(239,242,238,.55);margin-top:12px;padding-left:12px}
+.clock-card h3{font-family:var(--display);font-weight:700;font-size:28px;letter-spacing:-.035em;margin-bottom:14px;padding-left:12px}
+@media (max-width:1100px){.clock-card{grid-template-columns:1fr;justify-items:center}.clock-card .hours-wrap{width:100%}}
+.loc-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.loc-card{position:relative;border-radius:24px;padding:26px;background:var(--chalk);overflow:hidden;isolation:isolate}
+.loc-card::before{content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .4s;background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%), rgba(226,121,58,.16), transparent 60%)}
+.loc-card:hover::before{opacity:1}
+.loc-card .lbl{font-size:14px;font-weight:700;color:var(--muted)}
+.loc-card .val{display:block;font-family:var(--display);font-weight:700;font-size:22px;line-height:1.15;letter-spacing:-.03em;margin:8px 0 18px;text-decoration:none}
+.loc-card a.val:hover{color:var(--copper-2)}
+.map{border-radius:24px;overflow:hidden;min-height:300px;background:#dde3df}
+.map iframe{width:100%;height:100%;min-height:300px;border:0;display:block;filter:grayscale(.35) contrast(1.05)}
+@media (max-width:960px){.visit-grid{grid-template-columns:1fr}.clock-card{grid-row:auto}}
+@media (max-width:520px){.loc-cards{grid-template-columns:1fr}.clock-card{padding:26px 16px}.dial{width:220px;height:220px}}
+
+/* FAQ */
+.faq-wrap{display:grid;grid-template-columns:1fr 1.5fr;gap:60px}
+.faq-wrap .h2{position:sticky;top:120px}
+.faq details{border-radius:20px;background:var(--white);margin-bottom:10px;box-shadow:inset 0 0 0 1px var(--line);transition:background .3s}
+.faq details[open]{background:var(--ever);color:var(--chalk)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 24px;font-weight:800;font-size:18px}
+.faq summary::-webkit-details-marker{display:none}
+.faq .pm{width:34px;height:34px;flex:none;border-radius:50%;background:var(--chalk);color:var(--ever);display:grid;place-items:center;transition:transform .35s,background .3s}
+.faq .pm svg{width:14px;height:14px}
+.faq details[open] .pm{transform:rotate(45deg);background:var(--copper);color:var(--white)}
+.faq .ans{padding:0 24px 24px;color:rgba(239,242,238,.75);max-width:60ch}
+@media (max-width:860px){.faq-wrap{grid-template-columns:1fr;gap:26px}.faq-wrap .h2{position:static}}
+
+/* CTA */
+.cta{background:var(--copper);color:var(--white);overflow:hidden}
+.cta .h2{font-size:clamp(44px,7vw,110px);max-width:12ch}
+.cta-row{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end}
+.cta p{font-size:19px;margin-top:22px;max-width:38ch;color:rgba(255,255,255,.9);font-weight:500}
+.cta-actions{display:grid;gap:16px;justify-items:start}
+.phone-big{font-family:var(--display);font-weight:700;font-size:clamp(30px,3.6vw,52px);letter-spacing:-.04em;text-decoration:none;line-height:1;border-bottom:3px solid rgba(255,255,255,.6);padding-bottom:6px}
+.phone-big:hover{border-color:var(--white)}
+.cta .btn-dark::before{background:var(--white)}
+.cta .btn-dark:hover{color:var(--ever)}
+.cta-ring{position:absolute;right:-180px;top:-180px;width:560px;height:560px;color:rgba(255,255,255,.1);pointer-events:none}
+@media (max-width:860px){.cta-row{grid-template-columns:1fr}}
+
+/* FOOTER */
+footer{background:var(--ever);color:rgba(239,242,238,.7);padding:80px 0 30px;font-size:15px;overflow:hidden}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px}
+.foot h4{color:var(--chalk);font-size:15px;margin-bottom:14px}
+.foot ul{list-style:none;display:grid;gap:8px}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--brass)}
+.wordmark{font-family:var(--display);font-weight:800;font-size:12.6vw;line-height:.85;letter-spacing:-.06em;color:var(--ever-3);margin-top:70px;white-space:nowrap;text-align:center;user-select:none}
+.foot-bottom{margin-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:rgba(239,242,238,.45)}
+@media (max-width:860px){.foot{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.foot{grid-template-columns:1fr}}
+
+/* Mobile bar */
+.mbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:95;display:none;gap:8px;padding:8px;border-radius:999px;background:rgba(13,38,32,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:inset 0 0 0 1px var(--glass-line);transform:translateY(160%);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.mbar.show{transform:none}
+.mbar .btn{flex:1;padding:13px 10px}
+@media (max-width:760px){.mbar{display:flex}}
+
+.rv{opacity:0;transform:translateY(36px)}
+.no-motion .rv{opacity:1;transform:none}
+.no-motion .loader{display:none}
+
+@media (prefers-reduced-motion: reduce){
+  .grain,.dot.open,.loader svg{animation:none}
+}
+:root{--m-bg:#E4EAE6;--m-block:#D2DCD6;--m-park:#C6DCCB;--m-street:#FFFFFF;--m-main:#F3BE86;--m-label:#0D2620;--m-accent:#E2793A;--m-card:#0D2620;--m-card-ink:#EFF2EE;--m-btn-ink:#FFFFFF}
+/* Illustrated map (works everywhere, no embed needed) */
+.mapart{position:relative;display:block;width:100%;height:100%;min-height:340px;text-decoration:none;color:inherit;overflow:hidden;border-radius:inherit}
+.mapsvg{position:absolute;inset:0;width:100%;height:100%;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.mapart:hover .mapsvg{transform:scale(1.05)}
+.m-bg{fill:var(--m-bg)}
+.m-blocks rect{fill:var(--m-block)}
+.m-park{fill:var(--m-park)}
+.m-st path{stroke:var(--m-street);stroke-width:14;fill:none;stroke-linecap:round}
+.m-main{stroke:var(--m-main);stroke-width:26;fill:none}
+.m-lbl{font:700 12px var(--body);fill:var(--m-label);letter-spacing:.02em}
+.m-pin{fill:var(--m-accent)}
+.m-pin-dot{fill:var(--m-bg)}
+.m-pulse{fill:var(--m-accent);opacity:.35;transform-origin:center;transform-box:fill-box;animation:mpulse 2.2s ease-out infinite}
+@keyframes mpulse{0%{transform:scale(.4);opacity:.5}100%{transform:scale(2.6);opacity:0}}
+.mapcard{position:absolute;left:16px;right:16px;bottom:16px;display:grid;gap:4px;padding:16px 18px;border-radius:16px;background:var(--m-card);color:var(--m-card-ink);box-shadow:0 14px 30px -14px rgba(0,0,0,.45);max-width:360px}
+.mc-name{font-weight:800;font-size:16px}
+.mc-addr{font-size:14px;opacity:.8}
+.mc-btn{justify-self:start;margin-top:8px;font-weight:800;font-size:14px;padding:8px 14px;border-radius:999px;background:var(--m-accent);color:var(--m-btn-ink)}
+@media (prefers-reduced-motion: reduce){.m-pulse{animation:none}}
+.rate-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.c-rate .rate-links a{font-size:14px;font-weight:800;text-decoration:none;padding:8px 14px;border-radius:999px;box-shadow:inset 0 0 0 1px rgba(243,190,134,.5);transition:background .25s,color .25s}
+.c-rate .rate-links a:hover{background:var(--brass);color:var(--ever)}
+.c-rate .rate-links a.leave{background:var(--copper);color:var(--white);box-shadow:none}
+.c-rate .rate-links a.leave:hover{background:var(--brass);color:var(--ever)}
+</style>
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg>
+    <div class="loader-bar"><i id="loadBar"></i></div>
+    <div class="loader-num" id="loadNum">0%</div>
+  </div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<div class="cur" id="cur" aria-hidden="true"></div>
+<div class="cur-ring" id="curRing" aria-hidden="true"></div>
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-pill">
+    <a class="logo" href="#top" aria-label="New Generation Hardware, home">
+      <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3BE86"/><stop offset="1" stop-color="#E2793A"/></linearGradient></defs><polygon points="24,2 43,13 43,35 24,46 5,35 5,13" fill="url(#lg)"/><circle cx="24" cy="24" r="8.5" fill="#0D2620"/></svg>
+      <span class="logo-text">New Generation<small>Hardware Store</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#shop">Shop</a></li>
+      <li><a href="#departments">Departments</a></li>
+      <li><a href="#visit">Hours</a></li>
+      <li><a href="#faq">Questions</a></li>
+    </ul>
+    <div class="nav-right">
+      <a class="chip" href="https://www.google.com/maps/dir/?api=1&amp;destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener" style="text-decoration:none;color:inherit" title="Get directions"><span style="color:#F3BE86;display:flex"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:15px;height:15px;flex:none"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg></span>1800 Dr. MLK Jr. Blvd, Bronx</a>
+      <a class="btn btn-copper btn-sm mag" href="tel:+17185837211">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="nav-call-text">(718) 583-7211</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-glow"></div>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="wrap hero-content">
+    <span class="chip hero-chip" data-hero><span class="dot" data-dot></span><span data-status-hero>Bronx, NY</span></span>
+    <h1 id="heroTitle" aria-label="The parts that keep the Bronx running.">The parts that keep the <span class="cp">Bronx</span> running.</h1>
+    <div class="hero-row">
+      <div>
+        <p class="hero-sub" data-hero>Tools, paint, plumbing and electrical on Dr. Martin Luther King Jr. Blvd. Walk in, pick up at the curb, or get it delivered.</p>
+        <div class="hero-ctas" data-hero>
+          <a class="btn btn-copper mag" href="tel:+17185837211">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+            Call the store
+          </a>
+          <a class="btn btn-glass mag" href="https://www.google.com/maps/dir/?api=1&destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener">Get directions</a>
+        </div>
+      </div>
+      <div class="hero-stats" data-hero>
+        <div class="stat"><b><span data-num="4.5" data-dec="1">4.5</span> <span class="st">★</span></b><span>Google rating</span></div>
+        <div class="stat"><b data-num="192">192</b><span>Reviews</span></div>
+        <div class="stat"><b><span data-num="7">7</span> days</b><span>Open every week</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marq" aria-hidden="true">
+  <div class="marq-track" id="marq">
+    <div class="marq-item">Tools <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg> <span class="o">Paint</span> <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg> Plumbing <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg> <span class="o">Electrical</span> <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg> Fasteners <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg> <span class="o">Home repair</span> <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg></div>
+    <div class="marq-item">Tools <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg> <span class="o">Paint</span> <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg> Plumbing <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg> <span class="o">Electrical</span> <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg> Fasteners <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg> <span class="o">Home repair</span> <svg viewBox="0 0 100 100"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg></div>
+  </div>
+</div>
+
+<!-- SHOP / BENTO -->
+<section class="sec" id="shop">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2 rv">Shop the way your day works.</h2>
+      <p class="lede rv">Grab it off the shelf, call ahead and pick it up from the curb, or have it brought to your door.</p>
+    </div>
+    <div class="bento">
+      <article class="cell c-store rv spot">
+        <svg class="ghost-nut" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M3 9h18v2a3 3 0 0 1-6 0 3 3 0 0 1-6 0 3 3 0 0 1-6 0z"/><path d="M5 13v8h14v-8"/><path d="M10 21v-5h4v5"/></svg></div>
+        <h3>Walk the aisles</h3>
+        <p>Compare parts side by side, and ask at the counter what you actually need for the job.</p>
+        <ul class="tick">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Bring the broken part and match it on the spot</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Doors open at 8:30 AM, Monday to Saturday</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Open Sundays too, 10 AM to 4:30 PM</li>
+        </ul>
+      </article>
+      <article class="cell c-curb rv spot">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14"/><path d="M3 17V12l2-5h14l2 5v5"/><circle cx="7.5" cy="17.5" r="2"/><circle cx="16.5" cy="17.5" r="2"/><path d="M3 12h18"/></svg></div>
+        <h3>Curbside pickup</h3>
+        <p>Call in your list, pull up out front, and we bring it out to you.</p>
+      </article>
+      <article class="cell c-del rv spot">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4h13v12H1z"/><path d="M14 8h4l4 4v4h-8"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg></div>
+        <h3>Delivery</h3>
+        <p>Too heavy, too much, or no time to come by? Have your order dropped off.</p>
+      </article>
+      <article class="cell c-call rv spot">
+        <div>
+          <a class="big" href="tel:+17185837211">(718) 583-7211</a>
+          <p>Call to order for pickup or delivery.</p>
+        </div>
+        <a class="btn btn-dark mag" href="tel:+17185837211">Call now</a>
+      </article>
+      <article class="cell c-rate rv spot">
+        <div class="n">4.5</div>
+        <div>
+          <div class="stars" aria-label="4.5 out of 5 stars">
+            <svg viewBox="0 0 24 24" fill="#F3BE86"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4L1.5 9.6 9 8.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F3BE86"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4L1.5 9.6 9 8.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F3BE86"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4L1.5 9.6 9 8.9z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F3BE86"><path d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4L1.5 9.6 9 8.9z"/></svg>
+            <svg viewBox="0 0 24 24"><defs><linearGradient id="half"><stop offset=".5" stop-color="#F3BE86"/><stop offset=".5" stop-color="rgba(255,255,255,.18)"/></linearGradient></defs><path fill="url(#half)" d="M12 2l3 6.9 7.5.7-5.7 5 1.7 7.4L12 18.1 5.5 22l1.7-7.4L1.5 9.6 9 8.9z"/></svg>
+          </div>
+          <p>From 192 Google reviews.</p>
+          <div class="rate-links">
+            <a href="https://search.google.com/local/reviews?placeid=ChIJFb6lChP0wokR5jQyVNrrumc" target="_blank" rel="noopener">Read the reviews</a>
+            <a class="leave" href="https://search.google.com/local/writereview?placeid=ChIJFb6lChP0wokR5jQyVNrrumc" target="_blank" rel="noopener">★ Leave a review</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- DEPARTMENTS (horizontal) -->
+<section class="sec depts" id="departments">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2 rv">Everything for the job, under one roof.</h2>
+      <p class="lede rv">From a single washer to a full repaint. Not sure what you need? Bring a photo or the old part.</p>
+    </div>
+  </div>
+  <div class="h-outer" id="hOuter">
+    <div class="h-track" id="hTrack">
+      <article class="panel hot spot">
+        <svg class="pi" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 40l16-16"/><path d="M22 14l6-6 12 12-6 6z"/><path d="M28 8l4-4 12 12-4 4"/></svg>
+        <h3>Hand &amp; power tools</h3>
+        <p>Everything from a first toolbox to the drill that finishes the job.</p>
+        <div class="tags"><span>Hammers</span><span>Drills</span><span>Saws</span><span>Bits</span></div>
+      </article>
+      <article class="panel spot">
+        <svg class="pi" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="6" width="26" height="12" rx="3"/><path d="M34 12h6v10H22v6"/><rect x="18" y="28" width="8" height="14" rx="2"/></svg>
+        <h3>Paint &amp; supplies</h3>
+        <p>Fresh coats, clean edges, and everything to prep the wall.</p>
+        <div class="tags"><span>Paint</span><span>Primer</span><span>Rollers</span><span>Tape</span></div>
+      </article>
+      <article class="panel light spot">
+        <svg class="pi" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 14h18v8h12a6 6 0 0 1 6 6v14"/><path d="M6 22h10"/><path d="M36 42h12"/><path d="M14 8v6"/></svg>
+        <h3>Plumbing</h3>
+        <p>Stop the drip, fix the leak, swap the valve.</p>
+        <div class="tags"><span>Fittings</span><span>Valves</span><span>Pipe</span><span>Repair kits</span></div>
+      </article>
+      <article class="panel spot">
+        <svg class="pi" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M26 4L10 28h14l-2 16 16-24H24z"/></svg>
+        <h3>Electrical</h3>
+        <p>Light it up and keep it safe.</p>
+        <div class="tags"><span>Outlets</span><span>Switches</span><span>Wire</span><span>Bulbs</span></div>
+      </article>
+      <article class="panel spot">
+        <svg class="pi" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="24,4 40,13 40,31 24,40 8,31 8,13"/><circle cx="24" cy="22" r="7"/></svg>
+        <h3>Fasteners</h3>
+        <p>The right size, by the piece or by the box.</p>
+        <div class="tags"><span>Screws</span><span>Bolts</span><span>Anchors</span><span>Hooks</span></div>
+      </article>
+      <article class="panel hot spot">
+        <svg class="pi" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 22L24 8l18 14"/><path d="M10 19v23h28V19"/><path d="M20 42V30h8v12"/></svg>
+        <h3>Home repair</h3>
+        <p>Patch, seal and weatherproof before it becomes a bigger job.</p>
+        <div class="tags"><span>Caulk</span><span>Adhesives</span><span>Patching</span><span>Filters</span></div>
+      </article>
+      <article class="panel spot">
+        <svg class="pi" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="10" y="20" width="28" height="22" rx="3"/><path d="M16 20v-6a8 8 0 0 1 16 0v6"/><circle cx="24" cy="31" r="3"/></svg>
+        <h3>Locks &amp; security</h3>
+        <p>Doors that close right and lock tight.</p>
+        <div class="tags"><span>Locks</span><span>Hinges</span><span>Door hardware</span></div>
+      </article>
+      <article class="panel light spot">
+        <svg class="pi" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 6h20l-3 10H17z"/><path d="M17 16l-5 26h24l-5-26"/><path d="M20 26h8"/></svg>
+        <h3>Cleaning &amp; household</h3>
+        <p>Everyday basics for the home and the building.</p>
+        <div class="tags"><span>Cleaners</span><span>Mops</span><span>Buckets</span><span>Bags</span></div>
+      </article>
+      <article class="panel end">
+        <h3>Don't see it?</h3>
+        <p>Call and ask. If it's for the job, there's a good chance it's on the shelf.</p>
+        <div style="margin-top:24px"><a class="btn btn-copper mag" href="tel:+17185837211">Call (718) 583-7211</a></div>
+      </article>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="h-hint"><span>Scroll to browse</span><div class="h-bar"><i id="hBar"></i></div></div>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<section class="sec statement">
+  <div class="wrap statement-row">
+    <p class="statement-text" id="statement">The Bronx keeps building. We keep the parts, the tools and the know-how close by, so one broken piece never stops the whole job.</p>
+    <div class="statement-side">
+      <p>Landlords, supers, contractors and people fixing their own place all shop here. The questions are different. The answer should be the same: the right part, today.</p>
+      <p>Can't find it on the shelf? Ask at the counter before you leave.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="sec visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2 rv">Come by. We're open seven days.</h2>
+      <p class="lede rv">On Dr. Martin Luther King Jr. Boulevard in the Bronx.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="clock-card rv">
+        <svg class="dial" id="dial" viewBox="0 0 200 200" role="img" aria-label="Today's opening hours on a 24-hour dial"></svg>
+        <div class="hours-wrap">
+          <h3>Store hours</h3>
+          <ul class="hours" id="hours">
+            <li data-day="1"><span>Monday</span><span>8:30 AM – 7:30 PM</span></li>
+            <li data-day="2"><span>Tuesday</span><span>8:30 AM – 7:30 PM</span></li>
+            <li data-day="3"><span>Wednesday</span><span>8:30 AM – 7:30 PM</span></li>
+            <li data-day="4"><span>Thursday</span><span>8:30 AM – 7:30 PM</span></li>
+            <li data-day="5"><span>Friday</span><span>8:30 AM – 7:30 PM</span></li>
+            <li data-day="6"><span>Saturday</span><span>8:30 AM – 7:30 PM</span></li>
+            <li data-day="0"><span>Sunday</span><span>10:00 AM – 4:30 PM</span></li>
+          </ul>
+          <p class="clock-note">Holiday hours may differ. Call ahead on holidays.</p>
+        </div>
+      </div>
+      <div class="loc-cards">
+        <div class="loc-card rv spot">
+          <div class="lbl">Address</div>
+          <span class="val">1800 Dr. Martin Luther King Jr. Blvd, Bronx, NY 10453</span>
+          <a class="btn btn-dark btn-sm mag" href="https://www.google.com/maps/dir/?api=1&destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener">Get directions</a>
+        </div>
+        <div class="loc-card rv spot">
+          <div class="lbl">Phone</div>
+          <a class="val" href="tel:+17185837211">(718) 583-7211</a>
+          <a class="btn btn-copper btn-sm mag" href="tel:+17185837211">Call now</a>
+        </div>
+      </div>
+      <div class="map rv">
+          <a class="mapart" href="https://www.google.com/maps/search/?api=1&query=New+Generation+Hardware+Store&query_place_id=ChIJFb6lChP0wokR5jQyVNrrumc" target="_blank" rel="noopener" aria-label="Open New Generation Hardware Store in Google Maps">
+            <svg class="mapsvg" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <rect width="600" height="360" class="m-bg"/>
+              <g class="m-blocks">
+                <rect x="20" y="20" width="120" height="80" rx="6"/><rect x="160" y="20" width="90" height="60" rx="6"/><rect x="420" y="30" width="150" height="70" rx="6"/>
+                <rect x="30" y="250" width="110" height="90" rx="6"/><rect x="430" y="240" width="140" height="100" rx="6"/><rect x="330" y="280" width="70" height="60" rx="6"/>
+                <rect x="40" y="130" width="90" height="90" rx="6"/><rect x="470" y="130" width="100" height="80" rx="6"/>
+              </g>
+              <path class="m-park" d="M190 250 q40 -30 90 -10 q30 15 20 60 q-10 30 -70 30 q-50 -5 -40 -80z"/>
+              <g class="m-st"><path d="M0 115 H600"/><path d="M0 232 H600"/><path d="M150 0 V360"/><path d="M410 0 V360"/><path d="M0 40 L260 0"/></g>
+              <path class="m-main" d="M250 360 L330 0"/>
+              <text class="m-lbl" x="0" y="0" transform="translate(318 70) rotate(-77.5)">Dr. Martin Luther King Jr. Blvd</text>
+              <g transform="translate(303 122)">
+                <circle class="m-pulse" r="22"/>
+                <path class="m-pin" d="M0 0 C-14 -18 -20 -26 -20 -36 a20 20 0 1 1 40 0 c0 10 -6 18 -20 36z" transform="translate(0 -2)"/>
+                <circle class="m-pin-dot" cy="-38" r="7"/>
+              </g>
+            </svg>
+            <span class="mapcard">
+              <span class="mc-name">New Generation Hardware</span>
+              <span class="mc-addr">1800 Dr. Martin Luther King Jr. Blvd, Bronx, NY 10453</span>
+              <span class="mc-btn">Open in Google Maps</span>
+            </span>
+          </a>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap faq-wrap">
+    <h2 class="h2 rv">Before you come in.</h2>
+    <div class="faq">
+      <details>
+        <summary>What are your hours?<span class="pm"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+        <p class="ans">Monday through Saturday from 8:30 AM to 7:30 PM, and Sunday from 10:00 AM to 4:30 PM.</p>
+      </details>
+      <details>
+        <summary>Do you deliver?<span class="pm"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+        <p class="ans">Yes. Call the store at (718) 583-7211 to place your order and set up delivery.</p>
+      </details>
+      <details>
+        <summary>How does curbside pickup work?<span class="pm"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+        <p class="ans">Call in what you need, let us know when you're on the way, and pull up out front. We'll bring your order out to you.</p>
+      </details>
+      <details>
+        <summary>Can you help me find the right part?<span class="pm"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+        <p class="ans">That's what the counter is for. Bring the old part, a photo, or measurements and we'll help you match it.</p>
+      </details>
+      <details>
+        <summary>Where are you located?<span class="pm"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg></span></summary>
+        <p class="ans">1800 Dr. Martin Luther King Jr. Blvd, Bronx, NY 10453.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec cta">
+  <svg class="cta-ring" id="ctaRing" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" fill-rule="evenodd" d="M50 4l40 23v46L50 96 10 73V27zM50 32a18 18 0 1 0 0 36 18 18 0 0 0 0-36z"/></svg>
+  <div class="wrap cta-row">
+    <div>
+      <h2 class="h2" id="ctaHead">Need it today?</h2>
+      <p id="ctaLine">Call ahead and we'll have it ready, or come straight in.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="phone-big" href="tel:+17185837211">(718) 583-7211</a>
+      <a class="btn btn-dark mag" href="https://www.google.com/maps/dir/?api=1&destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener">Get directions</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="logo" href="#top" style="color:var(--chalk)">
+          <svg class="logo-mark" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,2 43,13 43,35 24,46 5,35 5,13" fill="url(#lg)"/><circle cx="24" cy="24" r="8.5" fill="#0D2620"/></svg>
+          <span class="logo-text">New Generation<small>Hardware Store</small></span>
+        </a>
+        <p style="max-width:32ch;margin-top:16px">Tools, paint, plumbing, electrical and everyday hardware in the Bronx.</p>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>1800 Dr. Martin Luther King Jr. Blvd</li>
+          <li>Bronx, NY 10453</li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener">Directions</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Hours</h4>
+        <ul>
+          <li>Mon–Sat: 8:30 AM – 7:30 PM</li>
+          <li>Sun: 10:00 AM – 4:30 PM</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+17185837211">(718) 583-7211</a></li>
+          <li><a href="#shop">In store, curbside, delivery</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="wordmark" aria-hidden="true">New Generation</div>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> New Generation Hardware Store</span>
+      <span>Website concept preview</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar" id="mbar">
+  <a class="btn btn-copper" href="tel:+17185837211">Call</a>
+  <a class="btn btn-glass" href="https://www.google.com/maps/dir/?api=1&destination=1800+Dr+Martin+L+King+Jr+Blvd,+Bronx,+NY+10453" target="_blank" rel="noopener">Directions</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fine = window.matchMedia("(pointer: fine)").matches;
+  var hasGsap = typeof window.gsap !== "undefined" && typeof window.ScrollTrigger !== "undefined";
+  var motion = hasGsap && !reduce;
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  var loader = document.getElementById("loader");
+  if(!motion){ document.documentElement.classList.add("no-motion"); loader.remove(); }
+
+  /* ---------- Live status (store time, New York) ---------- */
+  var HOURS={0:[600,990],1:[510,1170],2:[510,1170],3:[510,1170],4:[510,1170],5:[510,1170],6:[510,1170]};
+  function fmt(m){var h=Math.floor(m/60),mm=m%60,ap=h>=12?"PM":"AM";h=h%12||12;return h+(mm?":"+(mm<10?"0":"")+mm:"")+" "+ap;}
+  function nyNow(){
+    try{
+      var o={};new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",minute:"numeric",hourCycle:"h23"}).formatToParts(new Date()).forEach(function(p){o[p.type]=p.value;});
+      return {day:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(o.weekday),min:(parseInt(o.hour,10)%24)*60+parseInt(o.minute,10)};
+    }catch(e){var d=new Date();return {day:d.getDay(),min:d.getHours()*60+d.getMinutes()};}
+  }
+  function state(){
+    var n=nyNow(),h=HOURS[n.day],open=n.min>=h[0]&&n.min<h[1],before=n.min<h[0];
+    var nm=before?h[0]:HOURS[(n.day+1)%7][0];
+    return {n:n,h:h,open:open,before:before,nextOpen:nm};
+  }
+  function updateStatus(){
+    var s=state(), shortTxt, heroTxt, ctaHead, ctaLine;
+    if(s.open){
+      shortTxt="Open until "+fmt(s.h[1]);
+      heroTxt="Open now until "+fmt(s.h[1]);
+      ctaHead="Need it today?";
+      ctaLine="We're open until "+fmt(s.h[1])+" today. Call ahead and we'll have it ready, or come straight in.";
+    }else{
+      var when=s.before?"today":"tomorrow";
+      shortTxt="Opens "+fmt(s.nextOpen)+(s.before?"":" tomorrow");
+      heroTxt="Closed now. Opens "+fmt(s.nextOpen)+" "+when;
+      ctaHead=s.before?"Need it today?":"Need it tomorrow?";
+      ctaLine="We open at "+fmt(s.nextOpen)+" "+when+". Call ahead and we'll have your order ready.";
+    }
+    document.querySelectorAll("[data-dot]").forEach(function(d){d.className="dot "+(s.open?"open":"closed");});
+    document.querySelectorAll("[data-status-short]").forEach(function(e){e.textContent=shortTxt;});
+    document.querySelectorAll("[data-status-hero]").forEach(function(e){e.textContent=heroTxt;});
+    document.getElementById("ctaHead").textContent=ctaHead;
+    document.getElementById("ctaLine").textContent=ctaLine;
+    document.querySelectorAll("#hours li").forEach(function(li){li.classList.toggle("today",+li.dataset.day===s.n.day);});
+    drawDial(s);
+  }
+
+  /* ---------- 24h dial ---------- */
+  function polar(min,r){var a=(min/1440)*Math.PI*2-Math.PI/2;return [100+Math.cos(a)*r,100+Math.sin(a)*r];}
+  function arc(a,b,r){var p=polar(a,r),q=polar(b,r),large=(b-a)>720?1:0;return "M"+p[0].toFixed(2)+" "+p[1].toFixed(2)+" A"+r+" "+r+" 0 "+large+" 1 "+q[0].toFixed(2)+" "+q[1].toFixed(2);}
+  function drawDial(s){
+    var svg=document.getElementById("dial"),out="";
+    out+='<circle cx="100" cy="100" r="78" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="14"/>';
+    out+='<path d="'+arc(s.h[0],s.h[1],78)+'" fill="none" stroke="#E2793A" stroke-width="14" stroke-linecap="round"/>';
+    for(var i=0;i<24;i++){var a=polar(i*60,93),b=polar(i*60,i%6?97:99);out+='<line x1="'+a[0].toFixed(1)+'" y1="'+a[1].toFixed(1)+'" x2="'+b[0].toFixed(1)+'" y2="'+b[1].toFixed(1)+'" stroke="rgba(239,242,238,'+(i%6?'.25':'.6')+')" stroke-width="'+(i%6?1:1.6)+'"/>';}
+    [["12 AM",0],["6 AM",360],["12 PM",720],["6 PM",1080]].forEach(function(l){var p=polar(l[1],58);out+='<text x="'+p[0].toFixed(1)+'" y="'+(p[1]+3).toFixed(1)+'" text-anchor="middle">'+l[0]+'</text>';});
+    var hand=polar(s.n.min,86), dot=polar(s.n.min,78);
+    out+='<line x1="100" y1="100" x2="'+hand[0].toFixed(1)+'" y2="'+hand[1].toFixed(1)+'" stroke="#F3BE86" stroke-width="2" stroke-linecap="round"/>';
+    out+='<circle cx="'+dot[0].toFixed(1)+'" cy="'+dot[1].toFixed(1)+'" r="5" fill="#F3BE86" stroke="#0D2620" stroke-width="2"/>';
+    out+='<circle cx="100" cy="100" r="34" fill="#133229"/>';
+    out+='<text class="ctr-big" x="100" y="100" text-anchor="middle">'+(s.open?"Open":"Closed")+'</text>';
+    out+='<text class="ctr-sm" x="100" y="114" text-anchor="middle">'+(s.open?"until "+fmt(s.h[1]):"opens "+fmt(s.nextOpen))+'</text>';
+    svg.innerHTML=out;
+  }
+  updateStatus(); setInterval(updateStatus,30000);
+
+  /* ---------- Nav, progress, mobile bar ---------- */
+  var nav=document.getElementById("nav"),prog=document.getElementById("progress"),mbar=document.getElementById("mbar");
+  function onScroll(){
+    var y=window.scrollY,max=document.documentElement.scrollHeight-innerHeight;
+    nav.classList.toggle("solid",y>40);
+    prog.style.transform="scaleX("+(max>0?y/max:0)+")";
+    mbar.classList.toggle("show",y>innerHeight*.7);
+  }
+  addEventListener("scroll",onScroll,{passive:true}); onScroll();
+
+  /* ---------- Spotlight cards ---------- */
+  document.querySelectorAll(".spot").forEach(function(el){
+    el.addEventListener("pointermove",function(e){var r=el.getBoundingClientRect();el.style.setProperty("--mx",(e.clientX-r.left)+"px");el.style.setProperty("--my",(e.clientY-r.top)+"px");});
+  });
+
+  /* ---------- Statement words ---------- */
+  var st=document.getElementById("statement"),KEY={"Bronx":1,"parts,":1,"tools":1,"know-how":1};
+  st.innerHTML=st.textContent.trim().split(/\s+/).map(function(w){return '<span class="w'+(KEY[w]?' k':'')+'">'+w+'</span>';}).join(" ");
+  var words=st.querySelectorAll(".w");
+
+  /* ---------- Hero title split ---------- */
+  var ht=document.getElementById("heroTitle");
+  (function split(){
+    var html="";
+    ht.childNodes.forEach(function(node){
+      var isCp=node.nodeType===1, text=node.textContent;
+      text.split(/(\s+)/).forEach(function(part){
+        if(!part) return;
+        if(/^\s+$/.test(part)){html+=" ";return;}
+        html+='<span class="wd'+(isCp?' cp':'')+'" aria-hidden="true">'+part.split("").map(function(c){return '<span class="ch">'+c+'</span>';}).join("")+'</span>';
+      });
+    });
+    ht.innerHTML=html;
+  })();
+
+  if(!motion){
+    words.forEach(function(w){w.classList.add("on");});
+  }
+
+  /* ---------- Cursor + magnetic ---------- */
+  if(fine && !reduce){
+    var cur=document.getElementById("cur"),ring=document.getElementById("curRing"),mx=-100,my=-100,rx=-100,ry=-100;
+    addEventListener("pointermove",function(e){mx=e.clientX;my=e.clientY;},{passive:true});
+    (function loop(){rx+=(mx-rx)*.18;ry+=(my-ry)*.18;cur.style.transform="translate("+mx+"px,"+my+"px) translate(-50%,-50%)";ring.style.transform="translate("+rx+"px,"+ry+"px) translate(-50%,-50%)";requestAnimationFrame(loop);})();
+    document.querySelectorAll("a,button,summary").forEach(function(el){
+      el.addEventListener("pointerenter",function(){ring.classList.add("big");});
+      el.addEventListener("pointerleave",function(){ring.classList.remove("big");});
+    });
+    if(hasGsap){
+      document.querySelectorAll(".mag").forEach(function(b){
+        b.addEventListener("pointermove",function(e){var r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.28,y:(e.clientY-r.top-r.height/2)*.35,duration:.4,ease:"power3.out"});});
+        b.addEventListener("pointerleave",function(){gsap.to(b,{x:0,y:0,duration:.7,ease:"elastic.out(1,.4)"});});
+      });
+    }
+  } else {
+    document.getElementById("cur").remove(); document.getElementById("curRing").remove();
+  }
+
+  /* ---------- Motion ---------- */
+  var lenis=null;
+  if(motion){
+    gsap.registerPlugin(ScrollTrigger);
+
+    if(typeof window.Lenis!=="undefined"){
+      try{
+        lenis=new Lenis({lerp:.1,smoothWheel:true});
+        lenis.on("scroll",ScrollTrigger.update);
+        gsap.ticker.add(function(t){lenis.raf(t*1000);});
+        gsap.ticker.lagSmoothing(0);
+        lenis.stop();
+      }catch(e){lenis=null;}
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener("click",function(e){var id=a.getAttribute("href");if(id.length<2)id="#top";var t=document.querySelector(id);if(!t)return;e.preventDefault();if(lenis){lenis.scrollTo(t,{offset:-20,duration:1.4});}else{t.scrollIntoView({behavior:"smooth"});}});
+    });
+
+    // Preloader then hero sequence
+    var bar=document.getElementById("loadBar"),num=document.getElementById("loadNum"),pc={v:0};
+    gsap.set(".hero h1 .ch",{yPercent:120,rotate:8,opacity:0});
+    gsap.set("[data-hero]",{y:26,opacity:0});
+    gsap.set(".nav-pill",{y:-90,opacity:0});
+    var intro=gsap.timeline({paused:true,defaults:{ease:"power4.out"}});
+    intro.to(".hero h1 .ch",{yPercent:0,rotate:0,opacity:1,duration:1.1,stagger:.018})
+         .to("[data-hero]",{y:0,opacity:1,duration:.9,stagger:.09},"-=.8")
+         .to(".nav-pill",{y:0,opacity:1,duration:.9},"-=1");
+    gsap.timeline()
+      .to(pc,{v:100,duration:1.3,ease:"power2.inOut",onUpdate:function(){bar.style.transform="scaleX("+(pc.v/100)+")";num.textContent=Math.round(pc.v)+"%";}})
+      .to(loader,{yPercent:-100,duration:.9,ease:"power4.inOut",onStart:function(){intro.play();window.__heroEnter&&window.__heroEnter();},onComplete:function(){loader.remove();if(lenis)lenis.start();}});
+    setTimeout(function(){if(document.body.contains(loader)){loader.remove();intro.progress(1);if(lenis)lenis.start();}},5000);
+
+    // Count-ups in hero stats
+    document.querySelectorAll("[data-num]").forEach(function(el){
+      var to=parseFloat(el.dataset.num),dec=+(el.dataset.dec||0),o={v:0};
+      el.textContent=(0).toFixed(dec);
+      gsap.to(o,{v:to,duration:1.8,delay:1.9,ease:"power2.out",onUpdate:function(){el.textContent=o.v.toFixed(dec);}});
+    });
+
+    // Reveals
+    gsap.utils.toArray(".rv").forEach(function(el){
+      gsap.to(el,{opacity:1,y:0,duration:1,ease:"power3.out",scrollTrigger:{trigger:el,start:"top 88%"}});
+    });
+
+    // Velocity marquee
+    var mq=document.getElementById("marq"),mx2=0,vel=0,dir=1,half=0;
+    function measure(){half=mq.scrollWidth/2;}
+    measure(); addEventListener("resize",measure);
+    ScrollTrigger.create({trigger:".marq",start:"top bottom",end:"bottom top",onUpdate:function(self){vel=self.getVelocity();dir=self.direction;}});
+    gsap.ticker.add(function(){
+      var speed=1+Math.min(Math.abs(vel)/220,10);
+      mx2-=speed*dir; vel*=.92;
+      if(mx2<=-half)mx2+=half; if(mx2>0)mx2-=half;
+      mq.style.transform="translateX("+mx2+"px) skewX("+Math.max(-12,Math.min(12,-vel/260))+"deg)";
+    });
+
+    // Horizontal departments (desktop: pinned scroll; mobile: swipe)
+    var mm=gsap.matchMedia(), track=document.getElementById("hTrack"), hBar=document.getElementById("hBar");
+    mm.add("(min-width: 900px)",function(){
+      document.querySelector(".depts").classList.add("js-pin");
+      var dist=function(){return Math.max(0,track.scrollWidth-innerWidth+56);};
+      var tw=gsap.to(track,{x:function(){return -dist();},ease:"none",scrollTrigger:{trigger:"#departments",start:"top top",end:function(){return "+="+dist();},pin:true,scrub:1,invalidateOnRefresh:true,onUpdate:function(s){hBar.style.transform="scaleX("+s.progress+")";}}});
+      gsap.from(".panel",{y:80,opacity:0,rotate:3,stagger:.06,duration:1,ease:"power3.out",scrollTrigger:{trigger:"#departments",start:"top 70%"}});
+      return function(){document.querySelector(".depts").classList.remove("js-pin");tw.scrollTrigger&&tw.scrollTrigger.kill();gsap.set(track,{x:0});};
+    });
+    mm.add("(max-width: 899px)",function(){
+      var o=document.getElementById("hOuter");
+      var f=function(){var m=o.scrollWidth-o.clientWidth;hBar.style.transform="scaleX("+(m>0?o.scrollLeft/m:0)+")";};
+      o.addEventListener("scroll",f,{passive:true});
+      return function(){o.removeEventListener("scroll",f);};
+    });
+
+    // Statement word scrub
+    ScrollTrigger.create({trigger:st,start:"top 82%",end:"bottom 50%",scrub:true,onUpdate:function(self){var n=Math.round(self.progress*words.length);words.forEach(function(w,i){w.classList.toggle("on",i<n);});}});
+
+    // CTA ring spin + footer wordmark rise
+    gsap.to("#ctaRing",{rotation:120,ease:"none",scrollTrigger:{trigger:".cta",start:"top bottom",end:"bottom top",scrub:true}});
+    gsap.from(".wordmark",{yPercent:60,opacity:0,ease:"power3.out",duration:1.4,scrollTrigger:{trigger:"footer",start:"top 85%"}});
+
+    addEventListener("load",function(){ScrollTrigger.refresh();});
+  }
+
+  /* ---------- Three.js hero ---------- */
+  var canvas=document.getElementById("scene");
+  if(typeof THREE==="undefined"){canvas.style.display="none";return;}
+  var renderer;
+  try{renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});}catch(e){canvas.style.display="none";return;}
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.outputEncoding=THREE.sRGBEncoding;
+  renderer.toneMapping=THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure=1.05;
+  var scene=new THREE.Scene();
+  var camera=new THREE.PerspectiveCamera(36,1,.1,100);
+  camera.position.set(0,0,15);
+
+  // Studio environment so the metal actually reflects something
+  try{
+    var pm=new THREE.PMREMGenerator(renderer), env=new THREE.Scene();
+    env.add(new THREE.Mesh(new THREE.SphereGeometry(20,32,16),new THREE.MeshBasicMaterial({color:0x0d2620,side:THREE.BackSide})));
+    function panel(w,h,c,x,y,z){var m=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({color:c,side:THREE.DoubleSide}));m.position.set(x,y,z);m.lookAt(0,0,0);env.add(m);}
+    panel(14,4,0xffffff,0,10,4); panel(6,10,0xffe0c2,-12,2,2); panel(6,10,0xe2793a,12,-1,3); panel(10,3,0xa9c1b4,0,-9,6); panel(8,8,0x2a5a4c,0,0,-14);
+    scene.environment=pm.fromScene(env,.04).texture;
+  }catch(e){}
+  scene.add(new THREE.HemisphereLight(0xeaf3ee,0x0d2620,.35));
+  var key=new THREE.DirectionalLight(0xffffff,1.1); key.position.set(5,8,9); scene.add(key);
+  var warm=new THREE.PointLight(0xE2793A,3,26); warm.position.set(-3,-3,6); scene.add(warm);
+
+  var chrome=new THREE.MeshStandardMaterial({color:0xe6ebe8,metalness:1,roughness:.18});
+  var brushed=new THREE.MeshStandardMaterial({color:0x9fb0a8,metalness:1,roughness:.42});
+  var copper=new THREE.MeshStandardMaterial({color:0xE2793A,metalness:1,roughness:.26});
+  var brass=new THREE.MeshStandardMaterial({color:0xF3BE86,metalness:1,roughness:.3});
+  var enamel=new THREE.MeshStandardMaterial({color:0x1f5c4c,metalness:.35,roughness:.35});
+
+  function extrude(shape,depth,bevel){var g=new THREE.ExtrudeGeometry(shape,{depth:depth,bevelEnabled:true,bevelThickness:bevel||.06,bevelSize:bevel||.06,bevelSegments:4,curveSegments:40});g.center();return g;}
+  function hexNut(r){var s=new THREE.Shape();for(var i=0;i<6;i++){var a=i/6*Math.PI*2+Math.PI/6,x=Math.cos(a)*r,y=Math.sin(a)*r;i?s.lineTo(x,y):s.moveTo(x,y);}s.closePath();var h=new THREE.Path();h.absarc(0,0,r*.48,0,Math.PI*2,true);s.holes.push(h);return extrude(s,r*.55,r*.07);}
+  function gear(teeth,rOut,rIn,hole){var s=new THREE.Shape(),step=Math.PI*2/teeth;for(var i=0;i<teeth;i++){var a=i*step;[[rIn,a],[rOut,a+step*.18],[rOut,a+step*.48],[rIn,a+step*.66]].forEach(function(p,j){var x=Math.cos(p[1])*p[0],y=Math.sin(p[1])*p[0];(i===0&&j===0)?s.moveTo(x,y):s.lineTo(x,y);});}s.closePath();var h=new THREE.Path();h.absarc(0,0,hole,0,Math.PI*2,true);s.holes.push(h);for(var k=0;k<5;k++){var ang=k/5*Math.PI*2,rr=(rIn+hole)*.5,w=new THREE.Path();w.absarc(Math.cos(ang)*rr,Math.sin(ang)*rr,(rIn-hole)*.22,0,Math.PI*2,true);s.holes.push(w);}return extrude(s,.38,.045);}
+  function bolt(){var g=new THREE.Group(),hs=new THREE.Shape();for(var i=0;i<6;i++){var a=i/6*Math.PI*2,x=Math.cos(a)*.62,y=Math.sin(a)*.62;i?hs.lineTo(x,y):hs.moveTo(x,y);}hs.closePath();var head=new THREE.Mesh(extrude(hs,.38,.05),chrome);head.rotation.x=Math.PI/2;head.position.y=1.25;g.add(head);g.add(new THREE.Mesh(new THREE.CylinderGeometry(.27,.27,2.3,40),chrome));for(var t=0;t<12;t++){var ring=new THREE.Mesh(new THREE.TorusGeometry(.285,.045,10,40),brushed);ring.rotation.x=Math.PI/2+.12;ring.position.y=-1.08+t*.16;g.add(ring);}return g;}
+  function screw(mat){var g=new THREE.Group(),head=new THREE.Mesh(new THREE.CylinderGeometry(.42,.42,.16,40),mat);head.position.y=1;g.add(head);var slot=new THREE.Mesh(new THREE.BoxGeometry(.6,.08,.1),enamel);slot.position.y=1.09;g.add(slot);var s2=slot.clone();s2.rotation.y=Math.PI/2;g.add(s2);g.add(new THREE.Mesh(new THREE.CylinderGeometry(.16,.02,1.9,30),mat));for(var t=0;t<9;t++){var ring=new THREE.Mesh(new THREE.TorusGeometry(.17-t*.015,.035,8,30),mat);ring.rotation.x=Math.PI/2+.15;ring.position.y=.8-t*.19;g.add(ring);}return g;}
+  function wrench(){var g=new THREE.Group(),s=new THREE.Shape();s.absarc(0,0,.62,.62,Math.PI*2-.62,false);s.absarc(0,0,.3,Math.PI*2-.62,.62,true);s.closePath();var head=new THREE.Mesh(extrude(s,.22,.03),chrome);head.position.x=1.55;g.add(head);var hs=new THREE.Shape();hs.moveTo(-1.6,-.17);hs.lineTo(1.1,-.2);hs.lineTo(1.1,.2);hs.lineTo(-1.6,.17);hs.absarc(-1.6,0,.17,Math.PI/2,Math.PI*1.5,false);g.add(new THREE.Mesh(extrude(hs,.18,.03),chrome));var ring=new THREE.Shape();ring.absarc(0,0,.48,0,Math.PI*2,false);var rh=new THREE.Path();rh.absarc(0,0,.26,0,Math.PI*2,true);ring.holes.push(rh);var box=new THREE.Mesh(extrude(ring,.22,.03),chrome);box.position.x=-1.95;g.add(box);return g;}
+  function paintCan(){var g=new THREE.Group();g.add(new THREE.Mesh(new THREE.CylinderGeometry(.8,.8,1.2,56),enamel));g.add(new THREE.Mesh(new THREE.CylinderGeometry(.805,.805,.55,56,1,true),copper));var lid=new THREE.Mesh(new THREE.CylinderGeometry(.82,.82,.08,56),chrome);lid.position.y=.64;g.add(lid);var rb=new THREE.Mesh(new THREE.TorusGeometry(.8,.04,10,56),chrome);rb.rotation.x=Math.PI/2;rb.position.y=-.6;g.add(rb);var hd=new THREE.Mesh(new THREE.TorusGeometry(.82,.025,8,56,Math.PI),brushed);hd.position.y=.62;g.add(hd);return g;}
+
+  var root=new THREE.Group(); scene.add(root);
+  var items=[];
+  function add(obj,x,y,z,scale,spin){obj.position.set(x,y,z);obj.scale.setScalar(scale);obj.rotation.set(Math.random()*Math.PI,Math.random()*Math.PI,Math.random()*Math.PI);obj.userData={base:new THREE.Vector3(x,y,z),spin:spin,phase:Math.random()*Math.PI*2,drift:new THREE.Vector3((Math.random()-.5)*2,Math.random()*.5+.6,(Math.random()-.5)*2)};root.add(obj);items.push(obj);return obj;}
+  var bigGear=add(new THREE.Mesh(gear(18,2.05,1.74,.55),copper),4,.6,0,1,[0,0,.22]); bigGear.rotation.set(.3,-.55,0);
+  var smallGear=add(new THREE.Mesh(gear(11,1.12,.92,.32),chrome),6.25,2.45,-.5,1,[0,0,-.36]); smallGear.rotation.set(.3,-.55,0);
+  add(new THREE.Mesh(hexNut(.85),chrome),1.5,3.1,1.2,1,[.4,.6,.2]);
+  add(new THREE.Mesh(hexNut(.55),brass),7.2,-1.6,1.2,1,[.5,.3,.4]);
+  add(new THREE.Mesh(hexNut(.42),copper),-.3,-2.9,-1.4,1,[.3,.5,.2]);
+  add(bolt(),2.5,-2.2,1.8,.9,[.3,.4,.5]);
+  add(screw(brass),7.8,1.2,.6,.9,[.6,.2,.4]);
+  add(wrench(),5.1,4.1,-1.2,.85,[.2,.35,.25]);
+  add(paintCan(),1.1,-.4,-2.6,.95,[.25,.45,.15]);
+  add(new THREE.Mesh(hexNut(.35),chrome),-2.4,3.8,-3,1,[.5,.5,.5]);
+  add(screw(chrome),-3.2,-2.8,-2.4,.7,[.4,.3,.6]);
+  add(new THREE.Mesh(new THREE.TorusGeometry(.55,.14,20,60),brass),8.8,-3.6,-1.8,1,[.4,.5,.3]);
+
+  var pg=new THREE.BufferGeometry(),N=220,pos=new Float32Array(N*3);
+  for(var p=0;p<N;p++){pos[p*3]=(Math.random()-.5)*28;pos[p*3+1]=(Math.random()-.5)*18;pos[p*3+2]=(Math.random()-.5)*10-2;}
+  pg.setAttribute("position",new THREE.BufferAttribute(pos,3));
+  var dust=new THREE.Points(pg,new THREE.PointsMaterial({color:0xF3BE86,size:.045,transparent:true,opacity:.6,depthWrite:false}));
+  scene.add(dust);
+
+  var mouse={x:0,y:0},sm={x:0,y:0},scrollP=0,enter={v:motion?0:1},isMobile=false;
+  addEventListener("pointermove",function(e){mouse.x=e.clientX/innerWidth*2-1;mouse.y=-(e.clientY/innerHeight*2-1);},{passive:true});
+  addEventListener("scroll",function(){scrollP=Math.min(1,scrollY/innerHeight);},{passive:true});
+  window.__heroEnter=function(){gsap.to(enter,{v:1,duration:2.4,ease:"expo.out"});};
+  if(!motion) enter.v=1;
+
+  function resize(){
+    var w=canvas.clientWidth,h=canvas.clientHeight;
+    renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();
+    isMobile=w<760;
+    root.position.set(isMobile?-3.6:0,isMobile?3.4:0,isMobile?-4:0);
+    root.scale.setScalar(isMobile?.72:1);
+  }
+  addEventListener("resize",resize); resize();
+
+  var clock=new THREE.Clock(),visible=true;
+  new IntersectionObserver(function(en){visible=en[0].isIntersecting;}).observe(canvas);
+  function frame(){
+    requestAnimationFrame(frame);
+    if(!visible) return;
+    var t=clock.getElapsedTime(),sp=reduce?0:1;
+    sm.x+=(mouse.x-sm.x)*.05; sm.y+=(mouse.y-sm.y)*.05;
+    var scatter=scrollP*scrollP*6;
+    items.forEach(function(o){
+      var u=o.userData;
+      o.position.x=u.base.x+u.drift.x*scatter;
+      o.position.y=u.base.y+Math.sin(t*.8+u.phase)*.25*sp+u.drift.y*scatter*1.2-(1-enter.v)*9;
+      o.position.z=u.base.z+u.drift.z*scatter;
+      if(o===bigGear||o===smallGear){o.rotation.z+=u.spin[2]*.016*sp;}
+      else{o.rotation.x+=u.spin[0]*.01*sp;o.rotation.y+=u.spin[1]*.01*sp;o.rotation.z+=u.spin[2]*.006*sp;}
+    });
+    root.rotation.y=sm.x*.25+scrollP*.6;
+    root.rotation.x=-sm.y*.15+scrollP*.3;
+    dust.rotation.y=t*.02; dust.position.y=-scrollP*2;
+    warm.position.x=-3+sm.x*4; warm.position.y=-3+sm.y*3;
+    camera.position.x=sm.x*.6; camera.position.y=sm.y*.4;
+    camera.lookAt(isMobile?-1:1.6,0,0);
+    renderer.render(scene,camera);
+  }
+  frame();
+})();
+</script>
+
+<!-- Call dialog: phones dial directly; computers (which can't place calls) get the number to copy -->
+<div class="calldlg" id="callDlg" role="dialog" aria-modal="true" aria-labelledby="callTitle" hidden>
+  <div class="calldlg-box">
+    <button class="calldlg-x" type="button" aria-label="Close" data-close>&times;</button>
+    <p class="calldlg-k" id="callTitle">Call New Generation Hardware</p>
+    <a class="calldlg-num" href="tel:+17185837211" data-direct>(718) 583-7211</a>
+    <p class="calldlg-hint">On a computer? Copy the number, or scan the code with your phone's camera to call.</p>
+    <img class="calldlg-qr" alt="QR code that dials (718) 583-7211" width="150" height="150" src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&margin=8&data=tel%3A%2B17185837211" onerror="this.remove()">
+    <div class="calldlg-actions">
+      <button type="button" class="calldlg-btn primary" id="copyNum">Copy number</button>
+      <a class="calldlg-btn" href="tel:+17185837211" data-direct>Call from this device</a>
+    </div>
+    <p class="calldlg-toast" id="copyToast" aria-live="polite"></p>
+  </div>
+</div>
+<style>
+:root{--cd-bg:#0D2620;--cd-ink:#EFF2EE;--cd-accent:#E2793A;--cd-accent-ink:#FFFFFF}
+.calldlg{position:fixed;inset:0;z-index:300;display:grid;place-items:center;padding:16px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.calldlg[hidden]{display:none}
+.calldlg-box{position:relative;width:min(400px,100%);background:var(--cd-bg);color:var(--cd-ink);border-radius:22px;padding:30px 26px 24px;text-align:center;box-shadow:0 30px 60px -20px rgba(0,0,0,.6);animation:cdIn .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes cdIn{from{transform:translateY(20px) scale(.96);opacity:0}}
+.calldlg-x{position:absolute;top:10px;right:12px;width:36px;height:36px;border:0;border-radius:50%;background:rgba(127,127,127,.15);color:inherit;font-size:22px;line-height:1;cursor:pointer}
+.calldlg-k{font-weight:700;font-size:15px;opacity:.75}
+.calldlg-num{display:block;margin:6px 0 10px;font-family:var(--display);font-weight:800;font-size:38px;line-height:1.1;text-decoration:none;color:var(--cd-accent)}
+.calldlg-hint{font-size:14px;opacity:.75;max-width:30ch;margin:0 auto 14px}
+.calldlg-qr{margin:0 auto 16px;border-radius:12px;background:#fff;padding:6px}
+.calldlg-actions{display:grid;gap:10px}
+.calldlg-btn{display:block;width:100%;padding:14px;border-radius:12px;border:0;font:800 15px var(--body);cursor:pointer;text-decoration:none;background:rgba(127,127,127,.15);color:inherit}
+.calldlg-btn.primary{background:var(--cd-accent);color:var(--cd-accent-ink)}
+.calldlg-toast{min-height:20px;margin-top:10px;font-size:14px;font-weight:700}
+@media (prefers-reduced-motion: reduce){.calldlg-box{animation:none}}
+</style>
+<script>
+(function(){
+  var dlg=document.getElementById("callDlg"),toast=document.getElementById("copyToast"),last=null;
+  var touch=window.matchMedia("(pointer: coarse)").matches;
+  var framed=false; try{framed=window.self!==window.top;}catch(e){framed=true;}
+  function open(){last=document.activeElement;dlg.hidden=false;toast.textContent="";setTimeout(function(){document.getElementById("copyNum").focus();},30);}
+  function close(){dlg.hidden=true;if(last&&last.focus)last.focus();}
+  document.addEventListener("click",function(e){
+    var a=e.target.closest('a[href^="tel:"]'); if(!a) return;
+    if(a.hasAttribute("data-direct")){ if(framed){e.preventDefault();window.open(a.href,"_blank");} return; }
+    if(touch && !framed) return;              // phone opened normally: let it dial
+    e.preventDefault();
+    if(touch && framed){ window.open(a.href,"_blank"); }
+    open();
+  });
+  dlg.addEventListener("click",function(e){if(e.target===dlg||e.target.closest("[data-close]"))close();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!dlg.hidden)close();});
+  document.getElementById("copyNum").addEventListener("click",function(){
+    var n="(718) 583-7211";
+    function ok(){toast.textContent="Number copied";}
+    function fallback(){var t=document.createElement("textarea");t.value=n;t.style.position="fixed";t.style.opacity="0";document.body.appendChild(t);t.select();try{document.execCommand("copy");ok();}catch(err){toast.textContent=n;}t.remove();}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(n).then(ok,fallback);}else{fallback();}
+  });
+})();
+</script>
+</body>
+</html>
